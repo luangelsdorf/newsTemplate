@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <title>Adicionar notícia</title>
+</head>
+<header class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light-lg">
+        <a class="navbar-brand text-dark-2" href="#">
+            <img alt="" class="rounded" src="img/75px.png">
+            <strong>Tabajara News</strong>
+        </a>
+        <button class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+            Categorias
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="col-md-12 navbar-nav justify-content-around nav-fill p-0">
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-dark-lg btn-lg btn-block p-3" type="button">
+                        <strong>Esportes</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-dark-lg btn-lg btn-block p-3" type="button">
+                        <strong>Polícia</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-dark-lg btn-lg btn-block p-3" type="button">
+                        <strong>Política</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-dark-lg btn-lg btn-block p-3" type="button">
+                        <strong>Clima</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-dark-lg btn-lg btn-block p-3" type="button">
+                        <strong>Saúde</strong></button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="btn-group-vertical col-md-12 col-sm-12 col-12 col-lg-auto col-xl-auto">
+            <button class="btn m-1 btn-outline-dark" type="button"><strong>Assine</strong></button>
+            <button class="btn m-1 btn-outline-dark" type="button"><strong>Login</strong></button>
+        </div>
+    </nav>
+</header>
+
+
+<script>
+
+</script>
+
+
+<body class="row no-gutters bg-light-lg" onload="defaultParagraph(); defaultCarousel(); defaultImg(); defaultVid(); sideBarVisibility();">
+<div class="col-md-2 bg-dark-lg border-right-custom" id="sidebar">
+    <ul class="list-group bg-light-lg border-top-custom">
+
+        <li class="list-group-item bg-light-lg border-0 m-0 my-2 mr-3 btn text-dark text-left indigo-light bg-success-light active-sidebar-success" id="not">
+            <a href="noticias.html" class="material-icons text-center align-middle mr-3 ml-2 pb-1">library_books</a>
+            <a href="noticias.html">Notícias</a>
+        <button class="btn bg-transparent" onclick="showList('#not_options', '#dropNot', '#b-not')" id="dropNot"><b class="down border-dark mb-1" id="b-not"></b></button>
+        <ul class="list-group bg-indigo-light ml-4 mt-1 border border-indigo rounded hidden" id="not_options">
+            <li class="list-group-item bg-indigo-light text-dark border-0 m-0">
+                <a class="btn btn-block btn-fluid border-0 text-dark text-left my-1 success-light" href="add_noticia.html">
+                    <i class="material-icons text-center align-middle mr-2 pb-1">add</i>
+                    Adicionar
+                </a>
+            </li>
+            <li class="list-group-item bg-indigo-light text-dark border-0 m-0">
+                <a class="btn btn-block btn-fluid border-0 text-dark text-left my-1 warning-light" href="edt_notícia.html">
+                    <i class="material-icons text-center align-middle mr-2 pb-1">edit</i>
+                    Editar
+                </a>
+            </li>
+            <li class="list-group-item bg-indigo-light text-dark border-0 m-0">
+                <a class="btn btn-block btn-fluid border-0 text-dark text-left my-1 danger-light" href="del_noticia.html">
+                    <i class="material-icons text-center align-middle mr-2 pb-1">delete</i>
+                    Excluir
+                </a>
+            </li>
+        </ul>
+        </li>
+
+        <li class="list-group-item bg-light-lg border-0 m-0 my-2 mr-3 btn text-dark text-left teal-light" id="lay">
+            <a href="layouts.html" class="material-icons text-center align-middle mr-3 ml-2 pb-1">web</a>
+            <a href="layouts.html">Layouts</a>
+            <button class="btn bg-transparent" onclick="showList('#lay_options', '#dropLay', '#b-lay')" id="dropLay"><b class="down border-dark mb-1" id="b-lay"></b></button>
+            <ul class="list-group bg-teal-light ml-4 mt-1 border border-teal rounded hidden" id="lay_options">
+                <li class="list-group-item bg-teal-light text-dark border-0 m-0">
+                    <a class="btn btn-block btn-fluid border-0 text-dark text-left my-1 success-light" href="add_layout.html">
+                        <i class="material-icons text-center align-middle mr-2 pb-1">add</i>
+                        Adicionar
+                    </a>
+                </li>
+                <li class="list-group-item bg-teal-light text-dark border-0 m-0">
+                    <a class="btn btn-block btn-fluid border-0 text-dark text-left my-1 warning-light" href="edt_layout.html">
+                        <i class="material-icons text-center align-middle mr-2 pb-1">edit</i>
+                        Editar
+                    </a>
+                </li>
+                <li class="list-group-item bg-teal-light text-dark border-0 m-0">
+                    <a class="btn btn-block btn-fluid border-0 text-dark text-left my-1 danger-light" href="del_layout.html">
+                        <i class="material-icons text-center align-middle mr-2 pb-1">delete</i>
+                        Excluir
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li class="list-group-item border-0 rounded m-0 my-2 mr-3">
+            <a class="btn btn-block btn-fluid border-0 text-dark text-left bg-light-lg primary-light" href="javascript:void(0);">
+                <i class="material-icons text-center align-middle mr-3 ml-2 pb-1">account_box</i>
+                Usuários
+            </a>
+        </li>
+
+
+        <li class="list-group-item border-0 rounded m-0 my-2 mr-3">
+            <a class="btn btn-block btn-fluid border-0 text-dark text-left bg-light-lg pink-light" href="javascript:void(0);">
+                <i class="material-icons text-center align-middle mr-3 ml-2 pb-1">settings</i>
+                Configurações
+            </a>
+        </li>
+
+
+        <li class="list-group-item border-0 m-0 m-3 p-3 border-top-custom bg-light-lg">
+            <div class="custom-control custom-switch bg-light-lg text-left">
+                <input type="checkbox" class="custom-control-input" id="darkMode" onclick="changeTheme()">
+                <label class="custom-control-label text-dark unselectable" for="darkMode">Modo noturno</label>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="col-md-10 bg-light p-3 border-top-custom" id="main">
+    <span class="btn material-icons pr-2 ml-1 text-dark pb-2" onclick="sideBarToggle()" id="sidebar-toggle"></span>
+    <span class="text-dark pb-3">Painel lateral</span>
+
+
+    <div class="row py-3">
+        <div class="col-md-10">
+            <div class="row display-4 pl-3 text-success">
+                <button class="btn btn-sm bg-success m-3 shadow-sm text-white">
+                    <a class="material-icons pt-1" href="noticias.html">arrow_back</a>
+                </button>
+                Adicionar notícia
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="row justify-content-end pr-3">
+                <div class="dropleft shadow-sm m-3" title="Adicionar...">
+                    <button class="btn bg-success text-white shadow-sm" type="button" data-toggle="dropdown">
+                        <i class="material-icons pt-1">attachment</i>
+                    </button>
+                    <div class="dropdown-menu bg-light">
+
+                        <button class="btn dropdown-item text-dark" onclick="return newParagraph()">
+                            <i class="material-icons align-middle pr-2">text_fields</i>Parágrafo
+                        </button>
+
+                        <button class="btn dropdown-item text-dark" onclick="return openCarousel()">
+                            <i class="material-icons align-middle pr-2">view_carousel</i>Carrossel
+                        </button>
+
+                        <div class="btn dropdown-item">
+                            <label class="btn mb-0 p-0 text-dark" for="img"><i class="material-icons align-middle pr-2">insert_photo</i>Imagem</label>
+                            <input class="form-control-file input-file" type="file" accept="image/*" onchange="onChangeImg(this)" id="img">
+                        </div>
+
+                        <div class="btn dropdown-item">
+                            <label class="btn mb-0 p-0 text-dark" for="vid"><i class="material-icons align-middle pr-2">videocam</i>Vídeo</label>
+                            <input class="form-control-file input-file" type="file" accept="video/*" onchange="onChangeVid(this)" id="vid">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <form class="m-3" id="form_cancel">
+        <div class="row my-2 p-4 rounded bg-light-2">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="text-light" for="titulo"><strong>Título da Noticia</strong></label>
+                    <input type="text" class="h3 form-control bg-light-2 text-dark" name="titulo" id="titulo" placeholder="..."/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="text-light" for="subtitulo"><strong>Subtítulo da Noticia</strong></label>
+                    <input type="text" class="h3 form-control bg-light-2 text-dark" name="subtitulo" id="subtitulo" placeholder="..."/>
+                </div>
+            </div>
+        </div>
+
+        <div id="paragraph_container"  style="min-height: 116px;"></div>
+        <div id="carousels_container"  style="min-height: 116px;"></div>
+        <div id="img_container"        style="min-height: 116px;"></div>
+        <div id="video_container"      style="min-height: 116px;"></div>
+
+        <div class="row my-2 p-4 rounded bg-light-2">
+            <div class="col-md-6">
+                <label class="text-dark m-0 py-2"><strong class="pr-3">Escolha a imagem de capa:</strong></label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label text-dark" for="customRadioInline1">1</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label text-dark" for="customRadioInline2">2</label>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="pr-4 text-dark m-0 py-2" for="cat"><strong>Categoria da Notícia:</strong></label>
+                <select class="custom-select bg-light text-dark w-50" id="cat">
+                    <option class="bg-light text-dark">Esportes</option>
+                    <option class="bg-light text-dark">Polícia</option>
+                    <option class="bg-light text-dark">Política</option>
+                    <option class="bg-light text-dark">Clima</option>
+                    <option class="bg-light text-dark">Saúde</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+
+<footer class="container-fluid bg-light-lg border-top-custom p-2">
+
+    <div class="row no-gutters justify-content-around">
+        <div class="col-md-auto rounded bg-light-2">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link text-dark-lg" href="#">
+                        <h4 class="px-2 font-weight-bold">Esportes</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark-lg" href="#">
+                        <h4 class="px-2 font-weight-bold">Polícia</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark-lg" href="#">
+                        <h4 class="px-2 font-weight-bold">Política</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark-lg" href="#">
+                        <h4 class="px-2 font-weight-bold">Clima</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark-lg" href="#">
+                        <h4 class="px-2 font-weight-bold">Saúde</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-auto d-flex align-items-center">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h4 class="text-dark m-0">Assine</h4>
+                    </a>
+                </li>
+
+                <span class="border border-dark"></span>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h4 class="text-dark m-0">Login</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-auto d-flex align-items-center justify-content-center">
+            <ul class="nav">
+                <li class="nav-item pr-4">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/facebook.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/twitter.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/instagram.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+                <li class="nav-item pl-4">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/whatsapp.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row no-gutters justify-content-center p-3">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link text-dark rounded" href="#">
+                    <strong>Quem somos</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark rounded" href="#">
+                    <strong>Termos e condições</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark rounded" href="#">
+                    <strong>Política de Privacidade</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark rounded" href="#">
+                    <strong>Contato</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row no-gutters justify-content-center">
+        <strong class="lead" id="copy">© Tabajara News, 2020</strong>
+    </div>
+    
+
+    <!--Modal Slides-->
+    <div class="modal fade addCarousel" id="modalCarousel" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content bg-light">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="modalCarouselTitle">Adicionar Carousel</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span class="text-dark" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="carro_ceu">
+                    <div class="row justify-content-center" id="carousel_contente">
+                        <div class="col-md-3 text-center rounded" style="max-height: 170px; height: 170px;">
+                            <button class="btn btn-block border-custom shadow-sm bg-dark-sm" style="max-height: 170px; height: 170px;">
+                                <label class="m-0 p-0 btn" for="img_import"><i class="material-icons text-dark pt-2 md-10x">add</i></label><input class="form-control-file input-file" type="file" accept="image/*" onchange="onChangeCarouselFile(this)" id="img_import">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-success text-white" data-dismiss="modal"
+                            onclick="newCarousel()">Salvar Mudanças
+                    </button>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal" onclick="setTimeout(cleanViewCarousel, 1000);">
+                        Cancelar
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Deletar Carrossel-->
+    <div class="modal fade" id="deleteReady">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Remover imagens</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="text-dark">&times;</i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="h6">Deseja mesmo excluir este carrossel de imagens?</p>
+                    <p class="h6 text-muted">Os arquivos de imagem serão mantidos.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn bg-danger text-white" data-dismiss="modal" id="confirmDel">Excluir</button>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        openCarousel = () => $('#modalCarousel').modal().toggle();
+    </script>
+
+
+</footer>
+</html>

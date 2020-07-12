@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/assets/css/docs.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <title>Notícias</title>
+</head>
+<header class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <a class="navbar-brand text-dark-2" href="#">
+            <img alt="" class="rounded" src="img/75px.png">
+            <strong>Tabajara News</strong>
+        </a>
+        <button class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+            Categorias
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="col-md-12 navbar-nav justify-content-around nav-fill">
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-danger btn-lg btn-block p-3" type="button">
+                        <strong>Esportes</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-warning btn-lg btn-block p-3" type="button">
+                        <strong>Polícia</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-primary btn-lg btn-block p-3" type="button">
+                        <strong>Política</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-caution btn-lg btn-block p-3" type="button">
+                        <strong>Clima</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-success btn-lg btn-block p-3" type="button">
+                        <strong>Saúde</strong></button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="darkMode" onclick="changeTheme()">
+            <label class="custom-control-label text-dark" for="darkMode"></label>
+        </div>
+
+        <div class="btn-group-vertical col-md-12 col-sm-12 col-12 col-lg-auto col-xl-auto">
+            <button class="btn m-1 btn-outline-dark" type="button"><strong>Assine</strong></button>
+            <button class="btn m-1 btn-outline-dark" type="button"><strong>Login</strong></button>
+        </div>
+    </nav>
+</header>
+
+<body class="container-fluid bg-light-lg">
+
+<div class="container py-3">
+
+    <div class="row">
+        <div class="col-lg-7">
+            <div id="Indicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#Indicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#Indicators" data-slide-to="1"></li>
+                    <li data-target="#Indicators" data-slide-to="2"></li>
+                    <li data-target="#Indicators" data-slide-to="3"></li>
+
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active"> <!--FIRST SLIDE-->
+                        <div class="card text-white">
+                            <img src="img/backer.jpg" alt="">
+                            <div class="card-img-overlay">
+                                <div class="row justify-content-center"> <!--BADGE ROW-->
+                                    <a href="#"><span class="badge badge-success badge-pill badge-outline">Saúde</span></a>
+                                </div>
+                                <div class="row justify-content-center"> <!--TITLE ROW-->
+                                    <a class="text-white nav-link card-text" href="#">
+                                        <p class="h4 font-weight-light">Anvisa proíbe venda de cervejas da Backer com
+                                            validade igual ou posterior a agosto de 2020</p>
+                                    </a>
+                                </div>
+                                <div class="row justify-content-center"> <!--TIME ROW-->
+                                    <small class="card-text">Há 22 minutos</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item"> <!--SECOND SLIDE-->
+                        <div class="card text-white">
+                            <img src="img/backer.jpg" alt="">
+                            <div class="card-img-overlay">
+                                <div class="row justify-content-center"> <!--BADGE ROW-->
+                                    <a href="#"><span class="badge badge-success badge-pill badge-outline">Saúde</span></a>
+                                </div>
+                                <div class="row justify-content-center"> <!--TITLE ROW-->
+                                    <a class="text-white nav-link card-text" href="#">
+                                        <p class="h4 font-weight-light">Anvisa proíbe venda de cervejas da Backer com
+                                            validade igual ou posterior a agosto de 2020</p>
+                                    </a>
+                                </div>
+                                <div class="row justify-content-center"> <!--TIME ROW-->
+                                    <small class="card-text">Há 22 minutos</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item"> <!--THIRD SLIDE-->
+                        <div class="card text-white">
+                            <img src="img/backer.jpg" alt="">
+                            <div class="card-img-overlay">
+                                <div class="row justify-content-center"> <!--BADGE ROW-->
+                                    <a href="#"><span class="badge badge-success badge-pill badge-outline">Saúde</span></a>
+                                </div>
+                                <div class="row justify-content-center"> <!--TITLE ROW-->
+                                    <a class="text-white nav-link card-text" href="#">
+                                        <p class="h4 font-weight-light">Anvisa proíbe venda de cervejas da Backer com
+                                            validade igual ou posterior a agosto de 2020</p>
+                                    </a>
+                                </div>
+                                <div class="row justify-content-center"> <!--TIME ROW-->
+                                    <small class="card-text">Há 22 minutos</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item"> <!--FOURTH SLIDE-->
+                        <div class="card text-white">
+                            <img src="img/backer.jpg" alt="">
+                            <div class="card-img-overlay">
+                                <div class="row justify-content-center"> <!--BADGE ROW-->
+                                    <a href="#"><span class="badge badge-success badge-pill badge-outline">Saúde</span></a>
+                                </div>
+                                <div class="row justify-content-center"> <!--TITLE ROW-->
+                                    <a class="text-white nav-link card-text" href="#">
+                                        <p class="h4 font-weight-light">Anvisa proíbe venda de cervejas da Backer com
+                                            validade igual ou posterior a agosto de 2020</p>
+                                    </a>
+                                </div>
+                                <div class="row justify-content-center"> <!--TIME ROW-->
+                                    <small class="card-text">Há 22 minutos</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#Indicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#Indicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="container p-1 mt-3 border rounded">
+                <div class="row no-gutters">
+                    <div class="col-3">
+                        <img alt="" class="img-fluid" src="img/133x75%20(16--9)px.png">
+                    </div>
+                    <div class="col-9">
+                        <div class="row no-gutters">
+                            <a class="nav-link text-dark" href="noticia.html">
+                                Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de
+                                2020
+                            </a>
+                        </div>
+                        <div class="row no-gutters justify-content-end pb-2 pr-2">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                            <small class="d-block text-muted text-right pl-2">Há 3 horas</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container p-1 my-3 border rounded">
+                <div class="row no-gutters">
+                    <div class="col-3">
+                        <img alt="" class="img-fluid" src="img/133x75%20(16--9)px.png">
+                    </div>
+                    <div class="col-9">
+                        <div class="row no-gutters">
+                            <a class="nav-link text-dark" href="noticia.html">
+                                Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de
+                                2020
+                            </a>
+                        </div>
+                        <div class="row no-gutters justify-content-end pb-2 pr-2">
+                                    <span class="badge badge-success badge-pill badge-outline badge text-center font-weight-bbadge-outline old">
+                                        Sáude
+                                    </span>
+                            <small class="d-block text-muted text-right pl-2">Há 3 horas</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container p-1 my-3 border rounded">
+                <div class="row no-gutters">
+                    <div class="col-3">
+                        <img alt="" class="img-fluid" src="img/133x75%20(16--9)px.png">
+                    </div>
+                    <div class="col-9">
+                        <div class="row no-gutters">
+                            <a class="nav-link text-dark" href="noticia.html">
+                                Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de
+                                2020
+                            </a>
+                        </div>
+                        <div class="row no-gutters justify-content-end pb-2 pr-2">
+                                    <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                        Sáude
+                                    </span>
+                            <small class="d-block text-muted text-right pl-2">Há 3 horas</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container p-1 mt-3 border rounded">
+                <div class="row no-gutters">
+                    <div class="col-3">
+                        <img alt="" class="img-fluid" src="img/133x75%20(16--9)px.png">
+                    </div>
+                    <div class="col-9">
+                        <div class="row no-gutters">
+                            <a class="nav-link text-dark" href="noticia.html">
+                                Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de
+                                2020
+                            </a>
+                        </div>
+                        <div class="row no-gutters justify-content-end pb-2 pr-2">
+                                    <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                        Sáude
+                                    </span>
+                            <small class="d-block text-muted text-right pl-2">Há 3 horas</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card-deck pb-2">
+                <div class="card bg-transparent border rounded">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer border-top d-flex justify-content-between">
+                            <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                Sáude
+                            </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+
+                <div class="card bg-transparent border rounded">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer border-top d-flex justify-content-between">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-deck py-2 ">
+                <div class="card bg-transparent border rounded">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer border-top d-flex justify-content-between">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+                <div class="card bg-transparent border rounded">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer border-top d-flex justify-content-between">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-deck pt-2">
+                <div class="card bg-transparent border rounded">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer border-top d-flex justify-content-between">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+                <div class="card bg-transparent border rounded">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer border-top d-flex justify-content-between">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<footer class="container-fluid bg-light border-top p-2">
+
+    <div class="row no-gutters justify-content-center">
+        <div class="col-auto rounded bg-light-2">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="#">
+                        <h4 class="px-2 font-weight-bold">Esportes</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="#">
+                        <h4 class="px-2 font-weight-bold">Polícia</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-primary" href="#">
+                        <h4 class="px-2 font-weight-bold">Política</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-caution" href="#">
+                        <h4 class="px-2 font-weight-bold">Clima</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="#">
+                        <h4 class="px-2 font-weight-bold">Saúde</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-auto">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h4 class="text-dark">Assine</h4>
+                    </a>
+                </li>
+
+                <span class="border border-dark bg-dark"></span>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h4 class="text-dark">Login</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-auto">
+            <ul class="nav pl-5">
+                <li class="nav-item px-4 pt-3">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/facebook.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+                <li class="nav-item px-4 pt-3">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/twitter.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+                <li class="nav-item px-4 pt-3">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/instagram.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+                <li class="nav-item px-4 pt-3">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/whatsapp.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row no-gutters justify-content-center p-3">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <strong>Quem somos</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <strong>Termos e condições</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <strong>Política de Privacidade</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"
+                ><strong>Contato</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row no-gutters justify-content-center">
+        <strong class="lead" id="copy">© Tabajara News, 2020</strong>
+    </div>
+
+</footer>
+</html>

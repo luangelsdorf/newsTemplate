@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/assets/css/docs.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <title>Notícia</title>
+</head>
+<header class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <a class="navbar-brand text-dark-2" href="#">
+            <img alt="" class="rounded" src="img/75px.png">
+            <strong>Tabajara News</strong>
+        </a>
+        <button class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+            Categorias
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="col-md-12 navbar-nav justify-content-around nav-fill">
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-danger btn-lg btn-block p-3" type="button">
+                        <strong>Esportes</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-warning btn-lg btn-block p-3" type="button">
+                        <strong>Polícia</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-primary btn-lg btn-block p-3" type="button">
+                        <strong>Política</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-caution btn-lg btn-block p-3" type="button">
+                        <strong>Clima</strong></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-fluid btn-outline-success btn-lg btn-block p-3" type="button">
+                        <strong>Saúde</strong></button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="darkMode" onclick="changeTheme()">
+            <label class="custom-control-label text-dark" for="darkMode"></label>
+        </div>
+
+        <div class="btn-group-vertical col-md-12 col-sm-12 col-12 col-lg-auto col-xl-auto">
+            <button class="btn m-1 btn-outline-dark" type="button"><strong>Assine</strong></button>
+            <button class="btn m-1 btn-outline-dark" type="button"><strong>Login</strong></button>
+        </div>
+    </nav>
+</header>
+
+<body class="container-fluid bg-light-lg">
+
+<div class="container py-4">
+
+    <p class="display-4 text-dark">
+        Lorem ipsum vitae luctus. Felis risus elit litora faucibus ultrices augue, dictum
+        consequat.
+    </p>
+    <strong class="text-dark">Lorem ipsum tristique volutpat hac eleifend, aenean varius erat nec.</strong>
+    <hr>
+
+    <div class="container text-center">
+
+        <p class="text-justify text-dark">Lorem ipsum interdum nulla eu vel praesent rhoncus amet phasellus eget, justo tristique
+            amet cras sociosqu a lacus platea. fringilla netus non volutpat magna arcu urna aliquam lobortis pulvinar
+            varius, posuere ut nam donec ut magna etiam quis. eget non auctor per mi mattis venenatis integer enim,
+            cubilia morbi massa congue dolor pellentesque venenatis elementum rutrum, a aliquam porttitor ac morbi
+            vulputate et. cursus mauris dolor leo felis porttitor cursus vulputate donec ultrices imperdiet orci eget
+            fusce, tristique taciti lobortis adipiscing donec facilisis mattis interdum vehicula libero tristique.
+            ornare tellus lorem sem imperdiet tristique hac, suspendisse risus augue sapien ac.</p>
+
+        <figure class="figure p-3">
+            <img class="figure-img img-fluid" src="img/1024x575%20(16--9)px.png" height="404" width="720" alt="">
+            <figcaption class="figure-caption">Foto: eu</figcaption>
+        </figure>
+
+        <p class="text-justify text-dark">Lorem ipsum tortor quis torquent aptent sem rutrum elementum aptent, consectetur viverra
+            sodales arcu conubia quis rhoncus urna, curabitur urna imperdiet velit porta consequat proin mollis. taciti
+            litora diam aliquam potenti ullamcorper elit id, potenti platea nunc litora augue amet. phasellus
+            pellentesque viverra fusce tempor porttitor interdum vulputate feugiat consequat lacinia cras fusce
+            curabitur morbi nisi, nostra sociosqu dapibus laoreet dui auctor tortor orci vitae porttitor condimentum
+            pellentesque iaculis semper. vel per rutrum rhoncus aliquet ut placerat curae ultricies, sapien felis aptent
+            habitasse aenean conubia luctus, maecenas consequat nisi luctus nibh nunc sem.</p>
+        <p class="text-justify text-dark">Dictum quis per nisl proin vel ornare mollis orci gravida, et congue vehicula ut metus
+            convallis in integer dolor, morbi ullamcorper praesent sodales curabitur nec platea justo. dui massa varius
+            semper mi arcu suspendisse, placerat dolor inceptos rutrum urna est fringilla, nulla sed mattis suspendisse
+            laoreet. sit curabitur dictumst cursus est orci duis aenean mi, cubilia non dictumst consequat id feugiat
+            conubia, mollis nulla primis lacus placerat dictum donec. litora commodo etiam class varius porttitor auctor
+            pharetra, malesuada blandit habitasse lectus sed torquent, curae feugiat aenean turpis ante rutrum. varius
+            suspendisse faucibus leo nullam tincidunt facilisis, venenatis suscipit potenti elit leo condimentum, congue
+            dolor pellentesque curabitur ullamcorper.</p>
+
+    </div>
+
+    <div class="bg-light rounded row">
+        <h5 class="text-dark p-3">Leia mais:</h5>
+        <div class="card-deck mb-3">
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-transparent border my-2 shadow-sm">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-transparent border my-2 shadow-sm">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-transparent border my-2 shadow-sm">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-transparent border my-2 shadow-sm">
+                    <a href="#">
+                        <img alt="" class="card-img-top" src="img/133x75 (16--9)px.png">
+                    </a>
+                    <div class="card-body p-1">
+                        <a class="nav-link text-dark card-text p-2" href="#">
+                            Anvisa proíbe venda de cervejas da Backer com validade igual ou posterior a agosto de 2020
+                        </a>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                                <span class="badge badge-success badge-pill badge-outline text-center font-weight-bold">
+                                    Sáude
+                                </span>
+                        <small class="d-block text-muted text-right">Há 3 horas</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<footer class="container-fluid bg-light border-top p-2">
+
+    <div class="row no-gutters justify-content-center">
+        <div class="col-auto rounded bg-light-2">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="#">
+                        <h4 class="px-2 font-weight-bold">Esportes</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="#">
+                        <h4 class="px-2 font-weight-bold">Polícia</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-primary" href="#">
+                        <h4 class="px-2 font-weight-bold">Política</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-caution" href="#">
+                        <h4 class="px-2 font-weight-bold">Clima</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="#">
+                        <h4 class="px-2 font-weight-bold">Saúde</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-auto">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h4 class="text-dark">Assine</h4>
+                    </a>
+                </li>
+
+                <span class="border border-dark bg-dark"></span>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h4 class="text-dark">Login</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-auto">
+            <ul class="nav pl-5">
+                <li class="nav-item px-4 pt-3">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/facebook.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+                <li class="nav-item px-4 pt-3">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/twitter.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+                <li class="nav-item px-4 pt-3">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/instagram.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+                <li class="nav-item px-4 pt-3">
+                    <a class="nav-link" href="#" style="padding: 0;">
+                        <img src="img/logo/whatsapp.png" alt="" height="32" width="32">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row no-gutters justify-content-center p-3">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <strong>Quem somos</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <strong>Termos e condições</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <strong>Política de Privacidade</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"
+                ><strong>Contato</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row no-gutters justify-content-center">
+        <strong class="lead" id="copy">© Tabajara News, 2020</strong>
+    </div>
+
+</footer>
+</html>
