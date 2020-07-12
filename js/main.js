@@ -295,8 +295,12 @@ function renderReadyCarousel() {
             $('#carousels_container').append(container);
             $('#carrossel_' + m.id).append(m.conteudo.length + ' imagens, ' + m.tamanho.toFixed() + ' KB');
             carousels[carousels.indexOf(m)].conteudo.forEach(n => {
-                    var img = "<div class=\"col-md-2 p-3\"><div class=\"alert bg-transparent border-custom border-custom shadow-sm p-0 py-2 m-0 fade show row no-gutters justify-content-center align-items-center\" style=\"max-height: 100px; height: 100px;\"><img class=\"rounded\" id=\"" + n.id + "\" style=\"max-height: 84px; max-width: 84px;\" src=\"" + n.conteudo + "\" alt=\"\"></div></div>";
-                    $('#carouselWrapper_' + m.id).append(img).hide().show(400);
+                var img = "<div class=\"col-md-2 p-3\"><div class=\"alert bg-transparent border-custom border-custom shadow-sm p-0 py-2 m-0 fade show row no-gutters justify-content-center align-items-center\" style=\"max-height: 100px; height: 100px;\"><img class=\"rounded\" id=\"" + n.id + "\" style=\"max-height: 84px; max-width: 84px;\" src=\"" + n.conteudo + "\" alt=\"\"></div></div>";
+                $('#carouselWrapper_' + m.id).append(img)
+
+                if (carousels[carousels.length - 1] === m && fromDelete === false) {
+                    $('#carouselWrapper_' + m.id).hide().show(350, piscarVerde('#carousels_container'));
+                    }
                 }
             );
         }
