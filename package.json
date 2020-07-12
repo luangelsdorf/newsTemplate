@@ -1,0 +1,27 @@
+{
+  "name": "newstemplate",
+  "version": "1.0.0",
+  "description": "um front-end para notícias",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lulaluano/newsTemplate.git"
+  },
+  "keywords": [
+    "news"
+  ],
+  "author": "lulaluano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lulaluano/newsTemplate/issues"
+  },
+  "homepage": "https://github.com/lulaluano/newsTemplate#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}
