@@ -118,22 +118,22 @@ let imagens       = [];
 let videos        = [];
 
 /* Media Placeholders */
-let paragraph_ph   = "<div class=\"row border-teal border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-teal ml-auto unselectable\">Nenhum parágrafo adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-teal py-2 m-2\" href=\"javascript:void(0);\" onclick=\"newParagraph()\">add_box</a></div></div>";
-let carousel_ph    = "<div class=\"row border-caution border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-caution ml-auto unselectable\">Nenhum carousel adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-caution py-2 m-2\" href=\"javascript:void(0);\" onclick=\"openCarousel()\">add_box</a></div></div>";
-let image_ph       = "<div class=\"row border-info border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-info ml-auto unselectable\">Nenhuma imagem adicionada</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-info py-2 m-2\" for=\"img\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"image/*\" onchange=\"onChangeImg(this)\" id=\"img\"></div></div>";
-let video_ph       = "<div class=\"row border-indigo border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-indigo ml-auto unselectable\">Nenhum vídeo adicionado</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-indigo py-2 m-2\" for=\"vid\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"video/*\" onchange=\"onChangeVid(this)\" id=\"vid\"></div></div>";
+let paragraph_ph   = "<div class=\"row border border-teal border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-teal ml-auto unselectable\">Nenhum parágrafo adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-teal py-2 m-2\" href=\"javascript:void(0);\" onclick=\"newParagraph()\">add_box</a></div></div>";
+let carousel_ph    = "<div class=\"row border border-caution border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-caution ml-auto unselectable\">Nenhum carousel adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-caution py-2 m-2\" href=\"javascript:void(0);\" onclick=\"openCarousel()\">add_box</a></div></div>";
+let image_ph       = "<div class=\"row border border-info border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-info ml-auto unselectable\">Nenhuma imagem adicionada</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-info py-2 m-2\" for=\"img\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"image/*\" onchange=\"onChangeImg(this)\" id=\"img\"></div></div>";
+let video_ph       = "<div class=\"row border border-indigo border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-indigo ml-auto unselectable\">Nenhum vídeo adicionado</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-indigo py-2 m-2\" for=\"vid\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"video/*\" onchange=\"onChangeVid(this)\" id=\"vid\"></div></div>";
 
 
 /* Paragraph Functions */
 function defaultParagraph() {
     if (campos.length === 0) {
         $('#paragraph_container')
-            .removeClass('row border-teal border-dashed rounded justify-content-center align-items-center my-5')
+            .removeClass('row border border-teal border-dashed rounded justify-content-center align-items-center my-5')
             .append(paragraph_ph)
 
     } else {
         $('#paragraph_container')
-            .addClass('row border-teal border-dashed rounded justify-content-center align-items-center my-5')
+            .addClass('row border border-teal border-dashed rounded justify-content-center align-items-center my-5')
     }
 }
 
@@ -191,12 +191,12 @@ function defaultCarousel() {
     if (carousels.length === 0) {
         $('.row.no-gutters.w-100').remove()
         $('#carousels_container')
-            .removeClass('row border-caution border-dashed rounded justify-content-center align-items-center my-5')
+            .removeClass('row border border-caution border-dashed rounded justify-content-center align-items-center my-5')
             .append(carousel_ph)
 
     } else {
         $('#carousels_container')
-            .addClass('row border-caution border-dashed rounded justify-content-center align-items-center my-5')
+            .addClass('row border border-caution border-dashed rounded justify-content-center align-items-center my-5')
     }
 }
 
@@ -333,12 +333,12 @@ function totalCarouselSize() {
 function defaultImg() {
     if (imagens.length === 0) {
         $('#img_container')
-            .removeClass('row border-info border-dashed rounded my-5')
+            .removeClass('row border border-info border-dashed rounded my-5')
             .append(image_ph)
 
     } else {
         $('#img_container')
-            .addClass('row border-info border-dashed rounded my-5')
+            .addClass('row border border-info border-dashed rounded my-5')
     }
 }
 
@@ -413,12 +413,12 @@ function deleteAllImgs() {
 function defaultVid() {
     if (videos.length === 0) {
         $('#video_container')
-            .removeClass('row border-indigo border-dashed rounded my-5')
+            .removeClass('row border border-indigo border-dashed rounded my-5')
             .append(video_ph)
 
     } else {
         $('#video_container')
-            .addClass('row border-indigo border-dashed rounded my-5')
+            .addClass('row border border-indigo border-dashed rounded my-5')
     }
 }
 
