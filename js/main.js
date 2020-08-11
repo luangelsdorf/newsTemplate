@@ -15,8 +15,8 @@ function getDarkCookie() {
     var ca = decodedCookie.split(';');
     for(var i = 0; i <ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length) == "true";
+        while (c.charAt(0) === ' ') c = c.substring(1);
+        if (c.indexOf(name) === 0) return c.substring(name.length, c.length) === "true";
     }
     return false;
 }
@@ -328,6 +328,14 @@ function totalCarouselSize() {
 
 }
 
+function deleteAllCarousels() {
+    if (carousels.length < 1) return;
+    $('#carousels_container').find('.row.mx-3.mb-3').hide(350, piscarVermelho('#carousels_container'));
+    setTimeout(function() {
+        carousels = [];
+        renderReadyCarousel();
+    }, 350)
+}
 
 /* Image Functions */
 function defaultImg() {
