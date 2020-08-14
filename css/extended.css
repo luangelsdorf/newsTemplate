@@ -300,7 +300,7 @@ a[href]:hover {
 #img_container > .border-info {
     transition: all 200ms ease-out;
 }
-#video_container > .border-indigo {
+#video_container > .border-pink {
     transition: all 200ms ease-out;
 }
 #paragraph_container > .border-teal:hover {
@@ -312,7 +312,7 @@ a[href]:hover {
 #img_container > .border-info:hover {
     filter: brightness(80%);
 }
-#video_container > .border-indigo:hover {
+#video_container > .border-pink:hover {
     filter: brightness(65%);
 }
 .unselectable {
@@ -602,4 +602,12 @@ table.table-dark tbody tr:last-child {
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
     cursor: context-menu;
+}
+
+
+.modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+}
+.modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.2)
 }

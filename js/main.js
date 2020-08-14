@@ -119,9 +119,9 @@ let videos        = [];
 
 /* Media Placeholders */
 let paragraph_ph   = "<div class=\"row border border-teal border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-teal ml-auto unselectable\">Nenhum parágrafo adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-teal py-2 m-2\" href=\"javascript:void(0);\" onclick=\"newParagraph()\">add_box</a></div></div>";
-let carousel_ph    = "<div class=\"row border border-caution border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-caution ml-auto unselectable\">Nenhum carousel adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-caution py-2 m-2\" href=\"javascript:void(0);\" onclick=\"openCarousel()\">add_box</a></div></div>";
+let carousel_ph    = "<div class=\"row border border-caution border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-caution ml-auto unselectable\">Nenhum carousel adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-caution py-2 m-2\" href=\"javascript:void(0);\" data-toggle=\"modal\" data-target=\"#modalCarousel\">add_box</a></div></div>";
 let image_ph       = "<div class=\"row border border-info border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-info ml-auto unselectable\">Nenhuma imagem adicionada</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-info py-2 m-2\" for=\"img\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"image/*\" onchange=\"onChangeImg(this)\" id=\"img\"></div></div>";
-let video_ph       = "<div class=\"row border border-indigo border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-indigo ml-auto unselectable\">Nenhum vídeo adicionado</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-indigo py-2 m-2\" for=\"vid\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"video/*\" onchange=\"onChangeVid(this)\" id=\"vid\"></div></div>";
+let video_ph       = "<div class=\"row border border-pink border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-pink ml-auto unselectable\">Nenhum vídeo adicionado</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-pink py-2 m-2\" for=\"vid\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"video/*\" onchange=\"onChangeVid(this)\" id=\"vid\"></div></div>";
 
 
 /* Paragraph Functions */
@@ -288,10 +288,10 @@ function editCarousel() {
 
 function renderReadyCarousel() {
     $('#carousels_container').html("");
-    $('#carousels_container').append('<div class="row no-gutters w-100"><p class="h4 text-caution m-0 py-3 pl-3" id="carousels">Carousels</p><div class=\"ml-auto align-self-center rounded\"><a class=\"material-icons text-danger m-2\" title=\"Excluir todos\" href=\"javascript:void(0);\" onclick=\"deleteAllCarousels()\">close</a><a class=\"material-icons-outlined text-caution m-2\" href=\"javascript:void(0);\" onclick=\"openCarousel()\">add_box</a></div></div>');
+    $('#carousels_container').append('<div class="row no-gutters w-100"><p class="h4 text-caution m-0 py-3 pl-3" id="carousels">Carousels</p><div class=\"ml-auto align-self-center rounded\"><a class=\"material-icons text-danger m-2\" title=\"Excluir todos\" href=\"javascript:void(0);\" onclick=\"deleteAllCarousels()\">close</a><a class=\"material-icons-outlined text-caution m-2\" href=\"javascript:void(0);\" data-toggle=\"modal\" data-target=\"#modalCarousel\">add_box</a></div></div>');
     $('#carousels').append(" (" + carousels.length + ") - " + totalCarouselSize());
     carousels.forEach(m => {
-            var container = "<div class=\"row mx-3 mb-3 border rounded w-100 bg-light-2\" id=\"carouselWrapper_" + m.id + "\"><div class=\"row no-gutters w-100\" style=\"max-height: 32px;\"><p class=\"lead font-weight-bold p-2 m-0 text-dark\" id=\"carrossel_" + m.id + "\"></p><div class=\"ml-auto align-self-start rounded bg-light-4 shadow-sm\"><a class=\"material-icons text-danger p-2 md-18\" href=\"javascript:void(0)\" title=\"Excluir carrossel\"  onclick=\"deleteCarousel(" + m.id + ")\">remove</a><a class=\"material-icons text-warning p-2 md-18\" href=\"javascript:void(0)\" title=\"Excluir carrossel\">edit</a></div></div></div>";
+            var container = "<div class=\"row mx-3 mb-3 border rounded w-100 bg-light-2\" id=\"carouselWrapper_" + m.id + "\"><div class=\"row no-gutters w-100\" style=\"max-height: 32px;\"><p class=\"lead font-weight-bold p-2 m-0 text-dark\" id=\"carrossel_" + m.id + "\"></p><div class=\"ml-auto align-self-start rounded bg-light-4 shadow-sm\"><a class=\"material-icons text-danger p-2 md-18\" href=\"javascript:void(0)\" title=\"Excluir carrossel\" onclick=\"deleteCarousel(" + m.id + ")\">remove</a><a class=\"material-icons text-warning p-2 md-18\" href=\"javascript:void(0)\" title=\"Excluir carrossel\">edit</a></div></div></div>";
             $('#carousels_container').append(container);
             $('#carrossel_' + m.id).append(m.conteudo.length + ' imagens, ' + m.tamanho.toFixed() + ' KB');
             carousels[carousels.indexOf(m)].conteudo.forEach(n => {
@@ -421,12 +421,12 @@ function deleteAllImgs() {
 function defaultVid() {
     if (videos.length === 0) {
         $('#video_container')
-            .removeClass('row border border-indigo border-dashed rounded my-5')
+            .removeClass('row border border-pink border-dashed rounded my-5')
             .append(video_ph)
 
     } else {
         $('#video_container')
-            .addClass('row border border-indigo border-dashed rounded my-5')
+            .addClass('row border border-pink border-dashed rounded my-5')
     }
 }
 
@@ -441,7 +441,7 @@ function newVid(src, size) {
 function renderVid() {
     $('#video_container').html("");
     if (videos.length === 0) return;
-    $('#video_container').append('<div class="row no-gutters w-100"><p class="h4 text-indigo m-0 py-3 pl-3" id="videos">Vídeos</p><div class=\"ml-auto align-self-center rounded\"><a class=\"material-icons text-danger m-2\" title=\"Excluir todos\" href=\"javascript:void(0);\" onclick=\"deleteAllVids()\">close</a><label class=\"btn-2 p-0 material-icons-outlined text-indigo m-2\" for=\"vid\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"video/*\" onchange=\"onChangeVid(this)\" id=\"vid\"></div></div>');
+    $('#video_container').append('<div class="row no-gutters w-100"><p class="h4 text-pink m-0 py-3 pl-3" id="videos">Vídeos</p><div class=\"ml-auto align-self-center rounded\"><a class=\"material-icons text-danger m-2\" title=\"Excluir todos\" href=\"javascript:void(0);\" onclick=\"deleteAllVids()\">close</a><label class=\"btn-2 p-0 material-icons-outlined text-pink m-2\" for=\"vid\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"video/*\" onchange=\"onChangeVid(this)\" id=\"vid\"></div></div>');
     $('#videos').append(" (" + videos.length + ") - " + totalVidSize().toFixed() + "MB");
     videos.forEach(m => {
             var vid = $("<div class=\"col-md-6 mt-3 mb-4\" id=\"video_col_" + m.id + "\"><div class=\"alert alert-dismissible bg-transparent border-custom shadow p-0 m-0 fade show row no-gutters justify-content-center align-items-center\" style='max-height: 384px; height: 384px;'><figure class=\"figure\"><video class=\"rounded-top\" id=\"video_" + m.id + "\" style='max-height: 320px; max-width: 380px;' src=\"" + m.conteudo + "\" controls></video><figcaption class=\"figure-caption text-center text-dark bg-light-2 rounded-bottom py-1\"><small id=\"caption_vid_" + m.id + "\"></small><small class=\"font-weight-bold\">" + m.tamanho.toFixed() + " MB</small></figcaption></figure><button type=\"button\" onclick='deleteVid(" + m.id + ")' class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\" class=\"text-dark\">&times;</span></button></div></div>");
@@ -497,7 +497,7 @@ function deleteAllVids() {
 }
 
 function loadingVid() {
-    $('#video_container').append("<i class=\"spinner-border text-indigo align-self-center\"></i>");
+    $('#video_container').append("<i class=\"spinner-border text-pink align-self-center\"></i>");
 }
 
 
@@ -568,5 +568,25 @@ $('.add-not-light, .add-not-dark').click(function () {
     location.href = "add_noticia.html";
 });
 
+$(document).ready(() => {
+    $('#add-capa-btn').on('click', () => {
+        if (checkCarousels() + imagens.length < 2) {
+            piscarVermelho('#error')
+            document.getElementById('error').innerHTML = '<span class="material-icons align-middle pb-1 pr-1">error</span><span>Adicione ao menos 2 imagens para poder escolher a capa</span>'
 
-/*$('#carousels_container').append($('#carousel_contente').clone().find('#carousel_item_import_'));*/
+        } else {
+            document.getElementById('error').innerHTML = ''
+
+        }
+    })
+});
+
+function checkCarousels() {
+    let imgCounter = 0
+    carousels.forEach(carousel => {
+        carousel.conteudo.forEach(() => {
+            imgCounter += 1
+        })
+    })
+    return imgCounter
+}

@@ -141,7 +141,6 @@
     <span class="btn material-icons pr-2 ml-1 text-dark pb-2" onclick="sideBarToggle()" id="sidebar-toggle"></span>
     <span class="text-dark pb-3">Painel lateral</span>
 
-
     <div class="row py-3">
         <div class="col-md-10">
             <div class="row display-4 pl-3 text-success">
@@ -183,10 +182,8 @@
         </div>
     </div>
 
-
-
-    <form class="m-3" id="form_cancel">
-        <div class="row my-2 p-4 rounded bg-light-2">
+    <div class="container py-3" id="section-1">
+        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label class="text-light" for="titulo"><strong>Título da Noticia</strong></label>
@@ -201,36 +198,15 @@
             </div>
         </div>
 
-        <div id="paragraph_container"  style="min-height: 116px;"></div>
-        <div id="carousels_container"  style="min-height: 116px;"></div>
-        <div id="img_container"        style="min-height: 116px;"></div>
-        <div id="video_container"      style="min-height: 116px;"></div>
+        <div id="paragraph_container"  style="min-height: 116px;" class="mx-3"></div>
+        <div id="carousels_container"  style="min-height: 116px;" class="mx-3"></div>
+        <div id="img_container"        style="min-height: 116px;" class="mx-3"></div>
+        <div id="video_container"      style="min-height: 116px;" class="mx-3"></div>
 
-        <div class="row my-2 p-4 rounded bg-light-2">
-            <div class="col-md-6">
-                <label class="text-dark m-0 py-2"><strong class="pr-3">Escolha a imagem de capa:</strong></label>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                    <label class="custom-control-label text-dark" for="customRadioInline1">1</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                    <label class="custom-control-label text-dark" for="customRadioInline2">2</label>
-                </div>
-            </div>
+        <button class="btn btn-success m-3" id="add-capa-btn">Escolher imagem de capa</button>
+        <strong class="d-inline-block text-danger m-2 p-2" id="error"></strong>
+    </div>
 
-            <div class="col-md-6">
-                <label class="pr-4 text-dark m-0 py-2" for="cat"><strong>Categoria da Notícia:</strong></label>
-                <select class="custom-select bg-light text-dark w-50" id="cat">
-                    <option class="bg-light text-dark">Esportes</option>
-                    <option class="bg-light text-dark">Polícia</option>
-                    <option class="bg-light text-dark">Política</option>
-                    <option class="bg-light text-dark">Clima</option>
-                    <option class="bg-light text-dark">Saúde</option>
-                </select>
-            </div>
-        </div>
-    </form>
 </div>
 
 </body>
@@ -395,8 +371,31 @@
         </div>
     </div>
 
+    <!--Modal Escolher Imagem de Capa-->
+    <div class="modal fade" id="add-capa">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark">Escolha uma imagem</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         openCarousel = () => $('#modalCarousel').modal().toggle();
+
+
     </script>
 
 
