@@ -576,7 +576,12 @@ $(document).ready(() => {
 
         } else {
             document.getElementById('error').innerHTML = ''
+            imagens.forEach(m => {
+                var img = '<div class="col-md-4 p-2"><img class="img-fluid" src="' + m.conteudo + '" alt=""></div>'
+                $('#capas-container').append(img)
+            })
 
+            $('#add-capa').modal()
         }
     })
 });

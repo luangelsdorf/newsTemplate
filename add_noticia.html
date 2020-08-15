@@ -139,7 +139,7 @@
 
 <div class="col-md-10 bg-light p-3 border-top-custom" id="main">
     <span class="btn material-icons pr-2 ml-1 text-dark pb-2" onclick="sideBarToggle()" id="sidebar-toggle"></span>
-    <span class="text-dark pb-3">Painel lateral</span>
+    <span class="text-dark pb-3">Painel</span>
 
     <div class="row py-3">
         <div class="col-md-10">
@@ -204,7 +204,7 @@
         <div id="video_container"      style="min-height: 116px;" class="mx-3"></div>
 
         <button class="btn btn-success m-3" id="add-capa-btn">Escolher imagem de capa</button>
-        <strong class="d-inline-block text-danger m-2 p-2" id="error"></strong>
+        <strong class="d-inline-block text-danger rounded m-2 p-2" id="error"></strong>
     </div>
 
 </div>
@@ -382,7 +382,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="row" id="capas-container">
+
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
