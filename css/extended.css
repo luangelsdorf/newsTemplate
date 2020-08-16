@@ -6,7 +6,6 @@
 }
 
 .close {
-    font-size: 1.8rem;
     text-shadow: none;
 }
 
@@ -614,6 +613,12 @@ table.table-dark tbody tr:last-child {
 }
 
 .img-preview {
-    max-width: 70%;
-    height: auto;
+    height: 85%;
+    width: 85%;
+    object-fit: contain;
+}
+
+.img-preview-container {
+    display: flex;
+    height: 300px;
 }
