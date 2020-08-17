@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/extended.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+          rel="stylesheet">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/main.js"></script>
     <meta charset="UTF-8">
-    <title></title>
+    <title>jdajdhasdas</title>
 </head>
-<body>
+<body class="container">
+
+<div id="paragrafos" class="border border-teal">
+    <div class="row no-gutters justify-content-between" id="paragraph-header">
+        <span class="h4 text-teal paragraph-title">Parágrafos</span>
+        <div>
+            <span class="btn material-icons text-danger" id="deleteAllParagraphs">close</span>
+            <span class="btn material-icons-outlined text-teal" id="addParagraph">add_box</span>
+        </div>
+    </div>
+    <div class="row m-3 align-items-center" id="paragraph_container"></div>
+</div>
 
 </body>
 </html>
+
+<!--<div id="paragraph_container" style="min-height: 116px;" class="mx-3 row border border-teal border-dashed rounded justify-content-center align-items-center my-5">
+    <div class="row no-gutters w-100">
+        <p class="h4 text-teal m-0 py-3 pl-3">Parágrafos</p>
+        <div class="ml-auto align-self-start rounded py-2">
+            <a class="material-icons text-danger m-2" title="Excluir todos" href="javascript:void(0);" onclick="deleteAllParagraphs()">close</a>
+            <a class="material-icons-outlined text-teal m-2 pointer" id="add-paragraph">add_box</a>
+        </div>
+    </div>
+    <div class="col-md-11 hidden" id="paragrafo_0" style="display: block;">
+        <textarea class="form-control bg-light-2 text-dark m-0 my-3" id="conteudo_0" rows="3"></textarea>
+    </div>
+    <div class="col-md-1 hidden" id="btn_0" style="display: block;">
+        <button type="button" onclick="deleteParagraph(0);" class="btn close p-4" title="Excluir parágrafo">
+            <i class="material-icons text-dark">delete</i>
+        </button>
+    </div>
+</div>-->

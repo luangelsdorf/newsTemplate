@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/extended.css">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
     <meta charset="UTF-8">
     <title>Adicionar notícia</title>
 </head>
@@ -59,8 +59,8 @@
 </script>
 
 
-<body class="row no-gutters bg-light-lg" onload="defaultParagraph(); defaultCarousel(); defaultImg(); defaultVid(); sideBarVisibility();">
-<div class="col-md-2 bg-dark-lg border-right-custom" id="sidebar">
+<body class="row no-gutters bg-light-lg">
+<div class="col-lg-2 bg-dark-lg border-right-custom" id="sidebar">
     <ul class="list-group bg-light-lg border-top-custom">
 
         <li class="list-group-item bg-light-lg border-0 m-0 my-2 mr-3 btn text-dark text-left indigo-light bg-success-light active-sidebar-success" id="not">
@@ -137,7 +137,7 @@
     </ul>
 </div>
 
-<div class="col-md-10 bg-light p-3 border-top-custom" id="main">
+<div class="col-lg-10 bg-light p-3 border-top-custom" id="main">
     <span class="btn material-icons pr-2 ml-1 text-dark pb-2" onclick="sideBarToggle()" id="sidebar-toggle"></span>
     <span class="text-dark pb-3">Painel</span>
 

@@ -1,3 +1,5 @@
+import * as para from "./modules/paragrafos.js";
+
 $(document).ready(() => {
     setTheme(getDarkCookie());
 });
@@ -103,12 +105,11 @@ function setTheme(arg){
 }
 
 //--------------------------------------------------------------------------------------------------------------------\\
-
 var fromDelete = Boolean;
 var sideBarVisible = true;
 
 /* Arrays */
-let campos        = [];
+
 
 let viewCarousel  = [];
 let carousels     = [];
@@ -118,73 +119,19 @@ let imagens       = [];
 let videos        = [];
 
 /* Media Placeholders */
-let paragraph_ph   = "<div class=\"row border border-teal border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-teal ml-auto unselectable\">Nenhum parágrafo adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-teal py-2 m-2\" href=\"javascript:void(0);\" onclick=\"newParagraph()\">add_box</a></div></div>";
+
 let carousel_ph    = "<div class=\"row border border-caution border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-caution ml-auto unselectable\">Nenhum carousel adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-caution py-2 m-2\" href=\"javascript:void(0);\" data-toggle=\"modal\" data-target=\"#modalCarousel\">add_box</a></div></div>";
 let image_ph       = "<div class=\"row border border-info border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-info ml-auto unselectable\">Nenhuma imagem adicionada</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-info py-2 m-2\" for=\"img\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"image/*\" onchange=\"onChangeImg(this)\" id=\"img\"></div></div>";
 let video_ph       = "<div class=\"row border border-pink border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-pink ml-auto unselectable\">Nenhum vídeo adicionado</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-pink py-2 m-2\" for=\"vid\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"video/*\" onchange=\"onChangeVid(this)\" id=\"vid\"></div></div>";
 
 
 /* Paragraph Functions */
-function defaultParagraph() {
-    if (campos.length === 0) {
-        $('#paragraph_container')
-            .removeClass('row border border-teal border-dashed rounded justify-content-center align-items-center my-5')
-            .append(paragraph_ph)
 
-    } else {
-        $('#paragraph_container')
-            .addClass('row border border-teal border-dashed rounded justify-content-center align-items-center my-5')
-    }
-}
-
-function newParagraph() {
-    let id = 0;
-    if (campos.length !== 0) while (campos.filter(m => m.id === id)[0] !== undefined) id++;
-    campos.push({id: id, tipo: 'text', conteudo: ""});
-    fromDelete = false;
-    renderParagraph();
-}
-
-function renderParagraph() {
-    campos.forEach( m => {
-            m.conteudo = $('#conteudo_' + m.id).val();
-            if (m.conteudo === undefined) m.conteudo = "";
-        }
-    );
-    $('#paragraph_container').html("");
-    if (campos.length === 0) return;
-    $('#paragraph_container').append('<div class="row no-gutters w-100"><p class="h4 text-teal m-0 py-3 pl-3">Parágrafos</p><div class=\"ml-auto align-self-start rounded py-2\"><a class=\"material-icons text-danger m-2\" title=\"Excluir todos\" href=\"javascript:void(0);\" onclick=\"deleteAllParagraphs()\">close</a><a class=\"material-icons-outlined text-teal m-2\" href=\"javascript:void(0);\" onclick=\"newParagraph()\">add_box</a></div></div>');
-    campos.forEach(m => {
-            var campo = $("<div class=\"col-md-11 \" id=\"paragrafo_" + m.id + "\"><textarea class=\"form-control bg-light-2 text-dark m-0 my-3\" id=\"conteudo_" + m.id + "\" rows=\"3\">" + m.conteudo + "</textarea></div><div class=\"col-md-1\" id=\"btn_" + m.id + "\"><button type=\"button\" onclick=\"deleteParagraph(" + m.id + ");\" class=\"btn close p-4\" title=\"Excluir parágrafo\"><i class=\"material-icons text-dark\">delete</i></button></div>");
-            $('#paragraph_container').append(campo);
-            if (campos[campos.length - 1] === m && fromDelete === false) {
-                campo.toggleClass('hidden').show(350, piscarVerde('#paragraph_container'))
-            }
-        }
-    );
-    setTheme(getDarkCookie());
-    defaultParagraph();
-}
-
-function deleteParagraph(id) {
-    piscarVermelho('#paragraph_container');
-    campos.splice(campos.indexOf(campos.filter(value => value.id === id)[0]), 1);
-    fromDelete = true;
-    renderParagraph();
-    defaultParagraph();
-}
-
-function deleteAllParagraphs() {
-    if (campos.length < 1) return;
-    $('#paragraph_container').find('.col-md-11').hide(350);
-    $('#paragraph_container').find('.col-md-1').hide(350, piscarVermelho('#paragraph_container'));
-    campos = [];
-    setTimeout(function () {
-        renderParagraph();
-        defaultParagraph();
-    }, 350)
-
-}
+$(document).ready(() => {
+    document.querySelector('#addParagraph').addEventListener('click', () => {
+        para.newParagraph()
+    })
+})
 
 /* Carousel Functions */
 function defaultCarousel() {

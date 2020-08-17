@@ -332,7 +332,7 @@ a[href]:hover {
     box-shadow: -0.5rem 0 1rem -0.5rem rgba(0, 0, 0, 0.15) !important;
 }
 .border-custom {
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .border-top-custom {
     border-top: 1px solid rgba(0, 0, 0, 0.2) !important;
@@ -616,9 +616,32 @@ table.table-dark tbody tr:last-child {
     height: 85%;
     width: 85%;
     object-fit: contain;
+    cursor: pointer;
 }
 
 .img-preview-container {
     display: flex;
-    height: 300px;
+    height: 256px;
+}
+
+.col-md-4.mx-2 {
+    transition: all ease-in-out 200ms;
+}
+
+.col-md-4.mx-2:hover {
+    transform: scale(1.01, 1.01);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.paragraph-title {
+    padding-left: 0.75rem;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
 }
