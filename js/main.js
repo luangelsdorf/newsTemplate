@@ -1,5 +1,3 @@
-import * as para from "./modules/paragrafos.js";
-
 $(document).ready(() => {
     setTheme(getDarkCookie());
 });
@@ -127,11 +125,18 @@ let video_ph       = "<div class=\"row border border-pink border-dashed rounded 
 
 /* Paragraph Functions */
 
-$(document).ready(() => {
-    document.querySelector('#addParagraph').addEventListener('click', () => {
-        para.newParagraph()
+
+import('./modules/paragrafos.js')
+    .then((paragrafos) => {
+        document.querySelector('#addParagraph').addEventListener('click', () => {
+            paragrafos.newParagraph()
+        })
+
+        document.querySelector('#deleteAllParagraphs').addEventListener('click', () => {
+            paragrafos.deleteAllParagraphs()
+        })
     })
-})
+
 
 /* Carousel Functions */
 function defaultCarousel() {
