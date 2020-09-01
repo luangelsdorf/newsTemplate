@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <title>jdajdhasdas</title>
 </head>
-<body class="container">
+<body class="container py-3">
 
 <div id="paragrafos" class="border border-dashed border-teal p-2">
     <div class="row no-gutters justify-content-between" id="paragraph-header">
@@ -29,14 +29,14 @@
     </div>
 </div>
 
-
+<hr class="my-5 border-custom">
 
 <div id="carousels" class="border border-dashed border-caution p-2">
     <div class="row no-gutters justify-content-between" id="carousel-header">
-        <span class="h4 text-caution media-container-title">Carrosséis</span>
+        <span class="h4 text-caution media-container-title" id="carousel-title">Carrosséis</span>
         <div>
             <span class="btn material-icons text-danger" id="deleteAllCarousels">close</span>
-            <span class="btn material-icons-outlined text-caution" id="addCarousel">add_box</span>
+            <span class="btn material-icons-outlined text-caution" id="addCarousel" data-toggle="modal" data-target="#modalCarousel">add_box</span>
         </div>
     </div>
     <div class="row no-gutters m-3 flex-center" id="carousels_container">
@@ -46,7 +46,63 @@
     </div>
 </div>
 
+<hr class="my-5 border-custom">
 
+<div id="imagens" class="border border-dashed border-info p-2">
+    <div class="row no-gutters justify-content-between" id="image-header">
+        <span class="h4 text-info media-container-title" id="img-title">Imagens</span>
+        <div>
+            <span class="btn material-icons text-danger" id="deleteAllImgs">close</span>
+
+            <input class="form-control-file input-file" type="file" accept="image/*" id="addImg">
+            <label class="btn material-icons-outlined text-info m-0" for="addImg">add_box</label>
+        </div>
+    </div>
+    <div class="row no-gutters m-3 flex-center" id="img_container">
+        <span class="text-info h4">
+            Nenhuma imagem adicionada
+        </span>
+    </div>
+</div>
+
+
+
+
+<!--MODAL CAROUSELS-->
+<div class="modal fade addCarousel" id="modalCarousel" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content bg-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-dark" id="modalCarouselTitle">Adicionar Carousel</h5>
+                <button type="button" class="btn close material-icons text-dark" data-dismiss="modal">close</button>
+            </div>
+            <div class="modal-body">
+                <div class="view-carousel rounded">
+                    <div class="row no-gutters justify-content-between w-100">
+                        <span class="h5 m-0 text-dark media-container-title pt-1">Imagens</span>
+                        <div>
+                            <span class="btn material-icons text-danger" id="cleanViewCarousel">close</span>
+                            <input class="form-control-file input-file" type="file" accept="image/*" id="img_import">
+                            <label class="btn material-icons-outlined m-0 text-dark" for="img_import">add_box</label>
+                        </div>
+                    </div>
+                    <div class="row flex-center p-2" id="carousel_contente">
+                        <span class="text-dark h5 my-5">Nenhuma imagem adicionada</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-success text-white" id="newCarousel" data-dismiss="modal">
+                    Salvar Mudanças
+                </button>
+                <button type="button" class="btn btn-outline-primary" id="cancelCarousel" data-dismiss="modal">
+                    Cancelar
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 

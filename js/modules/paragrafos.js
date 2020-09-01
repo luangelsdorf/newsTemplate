@@ -18,10 +18,8 @@ function deleteParagraph(id) {
 }
 
 function deleteAllParagraphs() {
-    if (campos.length < 1) return;
     campos = [];
-    renderParagraph();
-    $('#paragraph_container').append('<span class="text-teal h4">Nenhum parágrafo adicionado</span>')
+    $('#paragraph_container').html('').append('<span class="text-teal h4">Nenhum parágrafo adicionado</span>')
 
 }
 
