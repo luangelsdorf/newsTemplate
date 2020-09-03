@@ -48,4 +48,4 @@ function renderParagraph() {
     });
 }
 
-export {newParagraph, deleteParagraph, deleteAllParagraphs};
+export {newParagraph, deleteAllParagraphs};

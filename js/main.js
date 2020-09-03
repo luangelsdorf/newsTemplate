@@ -178,69 +178,16 @@ import('./modules/imagens.js')
 
 
 /* Video Functions */
-function newVid(src, size) {
-    let id = 0;
-    if (videos.length !== 0) while (videos.filter(m => m.id === id)[0] !== undefined) id++;
-    videos.push({id: id, tipo: 'vid', conteudo: src, tamanho: size});
-    fromDelete = false;
-    renderVid();
-}
+import('./modules/videos.js')
+    .then((videos) => {
+        document.querySelector('#addVid').addEventListener('input', () => {
+            videos.onChangeVid(document.querySelector('#addVid'))
+        })
 
-function renderVid() {
-    $('#video_container').html("");
-    if (videos.length === 0) return;
-    $('#video_container').append('<div class="row no-gutters w-100"><p class="h4 text-pink m-0 py-3 pl-3" id="videos">Vídeos</p><div class="ml-auto align-self-center rounded"><a class="material-icons text-danger m-2" title="Excluir todos" href="javascript:void(0);" onclick="deleteAllVids()">close</a><label class="btn-2 p-0 material-icons-outlined text-pink m-2" for="vid">add_box</label><input class="form-control-file input-file" type="file" accept="video/*" onchange="onChangeVid(this)" id="vid"></div></div>');
-    $('#videos').append(" (" + videos.length + ") - " + totalVidSize().toFixed() + "MB");
-    videos.forEach(m => {
-            var vid = $('<div class="col-md-6 mt-3 mb-4" id="video_col_' + m.id + '"><div class="alert alert-dismissible bg-transparent border-custom shadow p-0 m-0 fade show row no-gutters justify-content-center align-items-center" style="max-height: 384px; height: 384px;"><figure class="figure"><video class="rounded-top" id="video_' + m.id + '" style="max-height: 320px; max-width: 380px;" src="' + m.conteudo + '" controls></video><figcaption class="figure-caption text-center text-dark bg-light-2 rounded-bottom py-1"><small id="caption_vid_' + m.id + '"></small><small class="font-weight-bold">' + m.tamanho.toFixed() + ' MB</small></figcaption></figure><button type="button" onclick="deleteVid(' + m.id + ')" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" class="text-dark">&times;</span></button></div></div>');
-            $('#video_container').append(vid);
-            if (videos[videos.length - 1] === m && fromDelete === false) {
-                vid.toggleClass('hidden').show(350)
-            }
-
-            document.getElementById("video_" + m.id).oncanplay = function() {
-                videos.forEach(m => {
-                    document.getElementById("caption_vid_" + m.id).innerHTML = document.getElementById("video_" + m.id).videoWidth + " x " + document.getElementById("video_" + m.id).videoHeight + ", ";
-                })
-            }
-        }
-    );
-}
-
-function totalVidSize() {
-    let tamanhos = videos.map(a => a.tamanho);
-    return tamanhos.reduce((a, b) => a + b, 0)
-}
-
-function onChangeVid(event) {
-    if (event.files && event.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            var size = document.getElementById('vid').files[0].size / 1048576; // <-- MB
-            newVid(e.target.result, size);
-        };
-        reader.readAsDataURL(event.files[0]);
-        loadingVid();
-    }
-}
-
-function deleteVid(id) {
-    videos.splice(videos.indexOf(videos.filter(value => value.id === id)[0]), 1);
-    fromDelete = true;
-    renderVid();
-}
-
-
-function deleteAllVids() {
-    if (videos.length < 1) return;
-    $('#video_container').find('.col-md-6').hide(350, piscarVermelho('#video_container'));
-    videos = [];
-    renderVid();
-}
-
-function loadingVid() {
-    $('#video_container').append('<i class="spinner-border text-pink align-self-center"></i>');
-}
+        document.querySelector('#deleteAllVids').addEventListener('click', () => {
+            videos.deleteAllVids()
+        })
+    })
 
 
 /* MISC */

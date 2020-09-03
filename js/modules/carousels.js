@@ -1,7 +1,7 @@
 let carousels = []
 let viewCarousel = []
 
-export function onChangeCarouselFile(event) {
+function onChangeCarouselFile(event) {
     if (event.files && event.files[0]) {
         var reader = new FileReader();
         reader.onload = e => {
@@ -13,7 +13,7 @@ export function onChangeCarouselFile(event) {
 }
 
 
-export function newImgViewCarousel(src, size) {
+function newImgViewCarousel(src, size) {
     let id = 0;
     if (viewCarousel.length !== 0) while (viewCarousel.filter(m => m.id === id)[0] !== undefined) id++;
     viewCarousel.push({id: id, tipo: 'img', conteudo: src, tamanho: size});
@@ -21,7 +21,7 @@ export function newImgViewCarousel(src, size) {
 }
 
 
-export function deleteCarouselImage(id) {
+function deleteCarouselImage(id) {
     viewCarousel.splice(viewCarousel.indexOf(viewCarousel.filter(value => value.id === id)[0]), 1);
     renderViewCarousel();
     if (viewCarousel.length === 0 ) {
@@ -29,7 +29,13 @@ export function deleteCarouselImage(id) {
     }
 }
 
-export function renderViewCarousel() {
+function cleanViewCarousel() {
+    viewCarousel = [];
+    $('#carousel_contente').html('').append('<span class="text-dark h5 my-5">Nenhuma imagem adicionada</span>')
+
+}
+
+function renderViewCarousel() {
     $('#carousel_contente').html("");
     if (viewCarousel.length !== 0) {
         viewCarousel.forEach(m => {
@@ -47,15 +53,7 @@ export function renderViewCarousel() {
     }
 }
 
-
-export function cleanViewCarousel() {
-    viewCarousel = [];
-    $('#carousel_contente').html('').append('<span class="text-dark h5 my-5">Nenhuma imagem adicionada</span>')
-
-}
-
-
-export function newCarousel() {
+function newCarousel() {
     if (viewCarousel.length !== 0) {
         let id = 0;
         if (carousels.length !== 0) while (carousels.filter(m => m.id === id)[0] !== undefined) id++;
@@ -66,7 +64,7 @@ export function newCarousel() {
 }
 
 
-export function deleteCarousel(id) {
+function deleteCarousel(id) {
     carousels.splice(carousels.indexOf(carousels.filter(value => value.id === id)[0]), 1);
     renderReadyCarousel();
     if (carousels.length === 0) {
@@ -74,7 +72,13 @@ export function deleteCarousel(id) {
     }
 }
 
-export function renderReadyCarousel() {
+function deleteAllCarousels() {
+    carousels = [];
+    $('#carousels_container').html('').append('<span class="text-caution h4">Nenhum carrossel adicionado</span>')
+    $('#carousel-title').html('Carrosséis')
+}
+
+function renderReadyCarousel() {
     $('#carousels_container').html("");
     if (carousels.length !== 0) {
         $('#carousel-title').html('').append("Carrosséis (" + carousels.length + ") - " + totalCarouselSize());
@@ -94,12 +98,12 @@ export function renderReadyCarousel() {
     }
 }
 
-export function singleCarouselSize(conteudo) {
+function singleCarouselSize(conteudo) {
     let tamanhos = conteudo.map(a => a.tamanho);
     return tamanhos.reduce((a, b) => a + b, 0)
 }
 
-export function totalCarouselSize() {
+function totalCarouselSize() {
     let tamanhos = carousels.map(a => a.tamanho);
     let size = tamanhos.reduce((a, b) => a + b, 0)
 
@@ -112,9 +116,4 @@ export function totalCarouselSize() {
 
 }
 
-export function deleteAllCarousels() {
-    carousels = [];
-    $('#carousels_container').html('').append('<span class="text-caution h4">Nenhum carrossel adicionado</span>')
-    $('#carousel-title').html('Carrosséis')
-}
-
+export {onChangeCarouselFile, deleteAllCarousels, cleanViewCarousel, newCarousel}
