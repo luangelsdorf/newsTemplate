@@ -42,14 +42,28 @@ function renderImg() {
             $('#img_container').append(img);
             setTimeout(function () {
                 imagens.forEach(m => {
-                    document.getElementById("caption_" + m.id).innerHTML = document.getElementById("figura_" + m.id).naturalWidth + " x " + document.getElementById("figura_" + m.id).naturalHeight + ", ";
+                    let width = document.getElementById("figura_" + m.id).naturalWidth
+                    let height = document.getElementById("figura_" + m.id).naturalHeight
+                    document.getElementById("caption_" + m.id).innerHTML = width + " x " + height + ", ";
                 })
             }, 0);
             document.getElementById('deleteImg_' + m.id).addEventListener('click', () => deleteImg(m.id))
+            document.getElementById('imagem_' + m.id).addEventListener('click', (e) => {
+                viewImg(e, document.getElementById('figura_' + m.id), m.conteudo)
+            })
         });
     } else {
         $('#img-title').html('Imagens')
     }
+}
+
+function viewImg(event, img, src) {
+    if (event.target.localName !== 'button') {
+        document.querySelector('#viewImgTitle').innerHTML = `Visualizar Imagem (${img.naturalWidth} x ${img.naturalHeight})`;
+        document.querySelector('#viewImgBody').innerHTML = `<figure class="figure m-0 text-center max-w-95"><img class="max-w-100" src="${src}" alt="">`
+        $('#viewImg').modal()
+    }
+
 }
 
 function totalImgSize() {

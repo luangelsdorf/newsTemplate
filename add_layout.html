@@ -89,7 +89,7 @@
 
 <!--MODAL CAROUSELS-->
 <div class="modal fade addCarousel" id="modalCarousel" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content bg-light">
             <div class="modal-header">
                 <h5 class="modal-title text-dark" id="modalCarouselTitle">Adicionar Carousel</h5>
@@ -117,11 +117,29 @@
                 <button type="button" class="btn btn-outline-primary" id="cancelCarousel" data-dismiss="modal">
                     Cancelar
                 </button>
-
             </div>
         </div>
     </div>
 </div>
+
+<!--MODAL VISUALIZAR IMAGEM-->
+<div class="modal fade" id="viewImg">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewImgTitle"></h5>
+                <button type="button" class="btn close material-icons text-dark" data-dismiss="modal">close</button>
+            </div>
+            <div class="modal-body text-center" id="viewImgBody">
+                <!--IMAGEM AQUI-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
 

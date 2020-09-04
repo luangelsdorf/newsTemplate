@@ -747,6 +747,9 @@ table.table-dark tbody tr:last-child {
 .max-w-75 {
     max-width: 75% !important;
 }
+.max-w-95 {
+    max-width: 95% !important;
+}
 
 .max-w-100 {
     max-width: 100% !important;

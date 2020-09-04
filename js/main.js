@@ -103,24 +103,11 @@ function setTheme(arg){
 }*/
 
 //--------------------------------------------------------------------------------------------------------------------\\
-var fromDelete = Boolean;
 var sideBarVisible = true;
 
-/* Arrays */
-
-
-let viewCarousel  = [];
 let carousels     = [];
 
 let imagens       = [];
-
-let videos        = [];
-
-/* Media Placeholders */
-
-let carousel_ph    = "<div class=\"row border border-caution border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-caution ml-auto unselectable\">Nenhum carousel adicionado</p><div class=\"ml-auto align-self-start\"><a class=\"material-icons-outlined text-caution py-2 m-2\" href=\"javascript:void(0);\" data-toggle=\"modal\" data-target=\"#modalCarousel\">add_box</a></div></div>";
-let image_ph       = "<div class=\"row border border-info border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-info ml-auto unselectable\">Nenhuma imagem adicionada</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-info py-2 m-2\" for=\"img\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"image/*\" onchange=\"onChangeImg(this)\" id=\"img\"></div></div>";
-let video_ph       = "<div class=\"row border border-pink border-dashed rounded justify-content-center align-items-center my-5\" style=\"height: 116px;\"><p class=\"h4 text-pink ml-auto unselectable\">Nenhum vídeo adicionado</p><div class=\"ml-auto align-self-start\"><label class=\"btn p-0 material-icons-outlined text-pink py-2 m-2\" for=\"vid\">add_box</label><input class=\"form-control-file input-file\" type=\"file\" accept=\"video/*\" onchange=\"onChangeVid(this)\" id=\"vid\"></div></div>";
 
 
 /* Paragraph Functions */
@@ -188,6 +175,7 @@ import('./modules/videos.js')
             videos.deleteAllVids()
         })
     })
+
 
 
 /* MISC */
