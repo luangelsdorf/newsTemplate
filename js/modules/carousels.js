@@ -39,7 +39,7 @@ function renderViewCarousel() {
     $('#carousel_contente').html("");
     if (viewCarousel.length !== 0) {
         viewCarousel.forEach(m => {
-            var campo = $('<div class="col-lg-4 col-sm-6 my-2" id="imagem_' + m.id + '"><div class="alert alert-dismissible img-container bg-transparent border-custom shadow p-0 py-2 m-0 flex-center"><figure class="figure m-0 text-center max-w-75"><img class="img-preview figure-img rounded-top max-w-100" src="' + m.conteudo + '" alt="" id="carousel_img_' + m.id + '"><figcaption class="figure-caption text-center text-dark bg-light-4 rounded-bottom py-1"><small id="img_size_' + m.id + '"></small><small class="font-weight-bold">' + m.tamanho.toFixed() + 'KB</small></figcaption></figure><button type="button" id="deleteCarouselImage_' + m.id + '" class="btn close material-icons text-dark" data-dismiss="alert" aria-label="Close">close</button></div></div>');
+            var campo = $('<div class="col-lg-4 col-sm-6 my-2" id="viewCarousel_image_' + m.id + '"><div class="alert alert-dismissible img-container bg-transparent border-custom shadow p-0 py-2 m-0 flex-center"><figure class="figure m-0 text-center max-w-75"><img class="img-preview figure-img rounded-top max-w-100" src="' + m.conteudo + '" alt="" id="carousel_img_' + m.id + '"><figcaption class="figure-caption text-center text-dark bg-light-4 rounded-bottom py-1"><small id="img_size_' + m.id + '"></small><small class="font-weight-bold">' + m.tamanho.toFixed() + 'KB</small></figcaption></figure><button type="button" id="deleteCarouselImage_' + m.id + '" class="btn close material-icons text-dark" data-dismiss="alert" aria-label="Close">close</button></div></div>');
             $('#carousel_contente').append(campo);
 
             setTimeout(() => {
@@ -49,6 +49,9 @@ function renderViewCarousel() {
             }, 0)
 
             document.getElementById('deleteCarouselImage_' + m.id).addEventListener('click', () => deleteCarouselImage(m.id))
+            document.getElementById('viewCarousel_image_' + m.id).addEventListener('click', (e) => {
+                viewImg(e, document.getElementById('carousel_img_' + m.id), m.conteudo)
+            })
         });
     }
 }
@@ -87,8 +90,12 @@ function renderReadyCarousel() {
             $('#carousels_container').append(container);
             $('#carrossel_' + m.id).append(m.conteudo.length + ' imagens, ' + m.tamanho.toFixed() + ' KB');
             carousels[carousels.indexOf(m)].conteudo.forEach(n => {
-                    var img = '<div class="col-md-2 p-3"><div class="alert img-carousel-container border-custom shadow-sm m-0 flex-center"><img class="rounded img-carousel-preview max-w-100" id="' + n.id + '" src="' + n.conteudo + '" alt=""></div></div>';
+                    var img = '<div class="col-md-2 p-3"><div class="alert img-carousel-container border-custom shadow-sm m-0 flex-center" id="readyCarousel_image_' + n.id + '"><img class="rounded img-carousel-preview max-w-100" id="readyCarousel_img_' + n.id + '" src="' + n.conteudo + '" alt=""></div></div>';
                     $('#carouselWrapper_' + m.id).append(img)
+
+                    document.getElementById('readyCarousel_image_' + n.id).addEventListener('click', (e) => {
+                        viewImg(e, document.getElementById('readyCarousel_img_' + n.id), n.conteudo)
+                    })
                 });
             document.getElementById('deleteCarousel_' + m.id).addEventListener('click', () => deleteCarousel(m.id))
             });
@@ -113,7 +120,14 @@ function totalCarouselSize() {
     } else {
         return size.toFixed(1).toString() + ' KB';
     }
+}
 
+function viewImg(event, img, src) {
+    if (event.target.localName !== 'button') {
+        document.querySelector('#viewImgTitle').innerHTML = `Visualizar Imagem (${img.naturalWidth} x ${img.naturalHeight})`;
+        document.querySelector('#viewImgBody').innerHTML = `<figure class="figure m-0 text-center max-w-95"><img class="max-w-100" src="${src}" alt="">`
+        $('#viewImg').modal()
+    }
 }
 
 export {onChangeCarouselFile, deleteAllCarousels, cleanViewCarousel, newCarousel}
