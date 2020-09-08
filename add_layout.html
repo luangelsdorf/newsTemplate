@@ -12,18 +12,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <title>jdajdhasdas</title>
 </head>
-<body class="container py-3">
+<body class="container py-3 bg-light">
+
+<div class="custom-control custom-switch bg-light-lg text-left">
+    <input type="checkbox" class="custom-control-input" id="darkMode">
+    <label class="custom-control-label text-dark unselectable" for="darkMode">Modo noturno</label>
+</div>
 
 <div id="paragrafos" class="border border-dashed border-teal p-2">
     <div class="row no-gutters justify-content-between" id="paragraph-header">
-        <span class="h4 text-teal media-container-title">Parágrafos</span>
+        <span class="h5 text-teal media-container-title">Parágrafos</span>
         <div>
             <span class="btn material-icons text-danger" id="deleteAllParagraphs">close</span>
             <span class="btn material-icons-outlined text-teal" id="addParagraph">add_box</span>
         </div>
     </div>
     <div class="row no-gutters m-3 flex-center" id="paragraph_container">
-        <span class="text-teal h5">
+        <span class="text-teal nenhum">
             Nenhum parágrafo adicionado
         </span>
     </div>
@@ -33,14 +38,14 @@
 
 <div id="carousels" class="border border-dashed border-caution p-2">
     <div class="row no-gutters justify-content-between" id="carousel-header">
-        <span class="h4 text-caution media-container-title" id="carousel-title">Carrosséis</span>
+        <span class="h5 text-caution media-container-title" id="carousel-title">Carrosséis</span>
         <div>
             <span class="btn material-icons text-danger" id="deleteAllCarousels">close</span>
             <span class="btn material-icons-outlined text-caution" id="addCarousel" data-toggle="modal" data-target="#modalCarousel">add_box</span>
         </div>
     </div>
     <div class="row no-gutters m-3 flex-center" id="carousels_container">
-        <span class="text-caution h5">
+        <span class="text-caution nenhum">
             Nenhum carrossel adicionado
         </span>
     </div>
@@ -50,7 +55,7 @@
 
 <div id="imagens" class="border border-dashed border-info p-2">
     <div class="row no-gutters justify-content-between" id="image-header">
-        <span class="h4 text-info media-container-title" id="img-title">Imagens</span>
+        <span class="h5 text-info media-container-title" id="img-title">Imagens</span>
         <div>
             <span class="btn material-icons text-danger" id="deleteAllImgs">close</span>
 
@@ -59,7 +64,7 @@
         </div>
     </div>
     <div class="row m-3 flex-center" id="img_container">
-        <span class="text-info h5">
+        <span class="text-info nenhum">
             Nenhuma imagem adicionada
         </span>
     </div>
@@ -70,7 +75,7 @@
 
 <div id="videos" class="border border-dashed border-pink p-2">
     <div class="row no-gutters justify-content-between" id="video-header">
-        <span class="h4 text-pink media-container-title" id="video-title">Vídeos</span>
+        <span class="h5 text-pink media-container-title" id="video-title">Vídeos</span>
         <div>
             <span class="btn material-icons text-danger" id="deleteAllVids">close</span>
 
@@ -79,7 +84,7 @@
         </div>
     </div>
     <div class="row m-3 flex-center" id="video_container">
-        <span class="text-pink h5">
+        <span class="text-pink nenhum">
             Nenhum vídeo adicionado
         </span>
     </div>
@@ -106,7 +111,7 @@
                         </div>
                     </div>
                     <div class="row flex-center p-2" id="carousel_contente">
-                        <span class="text-dark h5 my-5">Nenhuma imagem adicionada</span>
+                        <span class="text-dark nenhum my-5">Nenhuma imagem adicionada</span>
                     </div>
                 </div>
             </div>

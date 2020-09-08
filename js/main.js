@@ -1,4 +1,4 @@
-/*$(document).ready(() => {
+$(document).ready(() => {
     setTheme(getDarkCookie());
 });
 
@@ -100,7 +100,11 @@ function setTheme(arg){
 
 
     }
-}*/
+}
+
+document.querySelector('#darkMode').addEventListener('click', () => {
+    changeTheme()
+})
 
 //--------------------------------------------------------------------------------------------------------------------\\
 var sideBarVisible = true;

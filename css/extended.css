@@ -818,3 +818,13 @@ table.table-dark tbody tr:last-child {
 .view-carousel {
     background-color: rgba(0, 0, 0, 0.05);
 }
+
+.nenhum {
+    font-size: 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .nenhum {
+        font-size: 1.25rem !important;
+    }
+}
