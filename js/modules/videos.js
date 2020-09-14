@@ -23,13 +23,13 @@ function deleteVid(id) {
     videos.splice(videos.indexOf(videos.filter(value => value.id === id)[0]), 1);
     renderVid();
     if (videos.length === 0) {
-        $('#video_container').html('').append('<span class="text-pink h4">Nenhum vídeo adicionado</span>')
+        $('#video_container').html('').append('<span class="text-pink nenhum">Nenhum vídeo adicionado</span>')
     }
 }
 
 function deleteAllVids() {
     videos = [];
-    $('#video_container').html('').append('<span class="text-pink h4">Nenhum vídeo adicionado</span>')
+    $('#video_container').html('').append('<span class="text-pink nenhum">Nenhum vídeo adicionado</span>')
     $('#video-title').html('Vídeos')
 }
 

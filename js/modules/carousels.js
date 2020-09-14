@@ -71,13 +71,13 @@ function deleteCarousel(id) {
     carousels.splice(carousels.indexOf(carousels.filter(value => value.id === id)[0]), 1);
     renderReadyCarousel();
     if (carousels.length === 0) {
-        $('#carousels_container').html('').append('<span class="text-caution h4">Nenhum carrossel adicionado</span>')
+        $('#carousels_container').html('').append('<span class="text-caution nenhum">Nenhum carrossel adicionado</span>')
     }
 }
 
 function deleteAllCarousels() {
     carousels = [];
-    $('#carousels_container').html('').append('<span class="text-caution h4">Nenhum carrossel adicionado</span>')
+    $('#carousels_container').html('').append('<span class="text-caution nenhum">Nenhum carrossel adicionado</span>')
     $('#carousel-title').html('Carrosséis')
 }
 

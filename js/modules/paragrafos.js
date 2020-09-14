@@ -13,13 +13,13 @@ function deleteParagraph(id) {
     campos.splice(campos.indexOf(campos.filter(value => value.id === id)[0]), 1);
     renderParagraph();
     if (campos.length === 0) {
-        $('#paragraph_container').append('<span class="text-teal h4">Nenhum parágrafo adicionado</span>')
+        $('#paragraph_container').append('<span class="text-teal nenhum">Nenhum parágrafo adicionado</span>')
     }
 }
 
 function deleteAllParagraphs() {
     campos = [];
-    $('#paragraph_container').html('').append('<span class="text-teal h4">Nenhum parágrafo adicionado</span>')
+    $('#paragraph_container').html('').append('<span class="text-teal nenhum">Nenhum parágrafo adicionado</span>')
 
 }
 

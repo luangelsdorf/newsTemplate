@@ -23,13 +23,13 @@ function deleteImg(id) {
     imagens.splice(imagens.indexOf(imagens.filter(value => value.id === id)[0]), 1);
     renderImg()
     if (imagens.length === 0) {
-        $('#img_container').html('').append('<span class="text-info h4">Nenhuma imagem adicionada</span>')
+        $('#img_container').html('').append('<span class="text-info nenhum">Nenhuma imagem adicionada</span>')
     }
 }
 
 function deleteAllImgs() {
     imagens = [];
-    $('#img_container').html('').append('<span class="text-info h4">Nenhuma imagem adicionada</span>')
+    $('#img_container').html('').append('<span class="text-info nenhum">Nenhuma imagem adicionada</span>')
     $('#img-title').html('Imagens')
 }
 
