@@ -2,13 +2,13 @@ let carousels = []
 let viewCarousel = []
 
 function onChangeCarouselFile(event) {
-    if (event.files && event.files[0]) {
+    for (var i = 0; i < event.files.length; i++) {
         var reader = new FileReader();
         reader.onload = e => {
-            var size = document.getElementById('img_import').files[0].size / 1024; // <-- KB
+            var size = e.loaded / 1024; // <-- KB
             newImgViewCarousel(e.target.result, size);
         };
-        reader.readAsDataURL(event.files[0]);
+        reader.readAsDataURL(event.files[i]);
     }
 }
 
@@ -86,7 +86,7 @@ function renderReadyCarousel() {
     if (carousels.length !== 0) {
         $('#carousel-title').html('').append("Carrosséis (" + carousels.length + ") - " + totalCarouselSize());
         carousels.forEach(m => {
-            var container = '<div class="row mx-3 mb-3 border rounded w-100 bg-light-2" id="carouselWrapper_' + m.id + '"><div class="row no-gutters w-100"><p class="lead font-weight-bold p-2 m-0 text-dark" id="carrossel_' + m.id + '"></p><div class="ml-auto align-self-start rounded bg-light-4 shadow-sm"><a class="material-icons text-danger p-2 md-18" href="javascript:void(0)" id="deleteCarousel_' + m.id + '">remove</a><a class="material-icons text-warning p-2 md-18" href="javascript:void(0)">edit</a></div></div></div>';
+            var container = '<div class="row mx-3 mb-3 border rounded w-100 bg-light-2" id="carouselWrapper_' + m.id + '"><div class="row no-gutters w-100"><p class="lead font-weight-bold p-2 m-0 text-dark" id="carrossel_' + m.id + '"></p><div class="ml-auto align-self-start rounded bg-light-4 shadow-sm"><a class="material-icons text-danger p-2 md-18" href="javascript:void(0)" id="deleteCarousel_' + m.id + '">remove</a><a class="material-icons text-warning p-2 md-18" href="javascript:void(0)" id="editCarousel_' + m.id + '">edit</a></div></div></div>';
             $('#carousels_container').append(container);
             $('#carrossel_' + m.id).append(m.conteudo.length + ' imagens, ' + m.tamanho.toFixed() + ' KB');
             carousels[carousels.indexOf(m)].conteudo.forEach(n => {
@@ -98,11 +98,19 @@ function renderReadyCarousel() {
                     })
                 });
             document.getElementById('deleteCarousel_' + m.id).addEventListener('click', () => deleteCarousel(m.id))
+            document.getElementById('editCarousel_' + m.id).addEventListener('click', () => editCarousel(m.id))
             });
         setTimeout(cleanViewCarousel, 1000);
     } else {
         $('#carousel-title').html('Carrosséis')
     }
+}
+
+function editCarousel(id) {
+    viewCarousel = carousels[id].conteudo
+    renderViewCarousel()
+    $('#modalCarousel').modal()
+
 }
 
 function singleCarouselSize(conteudo) {

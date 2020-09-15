@@ -36,7 +36,7 @@
 
 <hr class="my-5 border-custom">
 
-<div id="carousels" class="border border-dashed border-caution p-2">
+<div id="carrosseis" class="border border-dashed border-caution p-2">
     <div class="row no-gutters justify-content-between" id="carousel-header">
         <span class="h5 text-caution media-container-title" id="carousel-title">Carrosséis</span>
         <div>
@@ -59,7 +59,7 @@
         <div>
             <span class="btn material-icons text-danger" id="deleteAllImgs">close</span>
 
-            <input class="form-control-file input-file" type="file" accept="image/*" id="addImg">
+            <input class="form-control-file input-file" type="file" multiple accept="image/*" id="addImg">
             <label class="btn material-icons-outlined text-info m-0" for="addImg">add_box</label>
         </div>
     </div>
@@ -79,7 +79,7 @@
         <div>
             <span class="btn material-icons text-danger" id="deleteAllVids">close</span>
 
-            <input class="form-control-file input-file" type="file" accept="video/*" id="addVid">
+            <input class="form-control-file input-file" type="file" multiple accept="video/*" id="addVid">
             <label class="btn material-icons-outlined text-pink m-0" for="addVid">add_box</label>
         </div>
     </div>
@@ -89,8 +89,6 @@
         </span>
     </div>
 </div>
-
-
 
 <!--MODAL CAROUSELS-->
 <div class="modal fade addCarousel" id="modalCarousel" tabindex="-1" role="dialog">
@@ -106,7 +104,7 @@
                         <span class="h5 m-0 text-dark media-container-title pt-1">Imagens</span>
                         <div>
                             <span class="btn material-icons text-danger" id="cleanViewCarousel">close</span>
-                            <input class="form-control-file input-file" type="file" accept="image/*" id="img_import">
+                            <input class="form-control-file input-file" multiple type="file" accept="image/*" id="img_import">
                             <label class="btn material-icons-outlined m-0 text-dark" for="img_import">add_box</label>
                         </div>
                     </div>
@@ -116,11 +114,11 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-outline-light" id="cancelCarousel" data-dismiss="modal">
+                    Cancelar
+                </button>
                 <button type="button" class="btn bg-success text-white" id="newCarousel" data-dismiss="modal">
                     Salvar Mudanças
-                </button>
-                <button type="button" class="btn btn-outline-primary" id="cancelCarousel" data-dismiss="modal">
-                    Cancelar
                 </button>
             </div>
         </div>
@@ -144,6 +142,34 @@
         </div>
     </div>
 </div>
+
+<!--<div class="modal fade" id="editCarousel">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editCarouselTitle"></h5>
+                <button type="button" class="btn close material-icons text-dark" data-dismiss="modal">close</button>
+            </div>
+            <div class="modal-body" id="editCarouselBody">
+                <div class="view-carousel rounded">
+                    <div class="row no-gutters justify-content-between w-100">
+                        <span class="h5 m-0 text-dark media-container-title pt-1">Imagens</span>
+                        <div>
+                            <input class="form-control-file input-file" type="file" accept="image/*" id="img_import">
+                            <label class="btn material-icons-outlined m-0 text-dark" for="img_import">add_box</label>
+                        </div>
+                    </div>
+                    <div class="row flex-center p-2" id="carousel_contente">
+                        <span class="text-dark nenhum my-5">Nenhuma imagem adicionada</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>-->
 
 </body>
 </html>

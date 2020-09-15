@@ -2,13 +2,13 @@ let imagens = []
 
 
 function onChangeImg(event) {
-    if (event.files && event.files[0]) {
+    for (var i = 0; i < event.files.length; i++) {
         var reader = new FileReader();
-        reader.onload = function (e) {
-            var size = document.getElementById('addImg').files[0].size / 1024; // <-- KB
+        reader.onload = e => {
+            var size = e.loaded / 1024; // <-- KB
             newImg(e.target.result, size);
         };
-        reader.readAsDataURL(event.files[0]);
+        reader.readAsDataURL(event.files[i]);
     }
 }
 

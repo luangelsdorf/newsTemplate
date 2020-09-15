@@ -1,14 +1,14 @@
 let videos = []
 
 function onChangeVid(event) {
-    if (event.files && event.files[0]) {
+    for (var i = 0; i < event.files.length; i++) {
         var reader = new FileReader();
-        reader.onload = function (e) {
-            var size = document.getElementById('addVid').files[0].size / 1048576; // <-- MB
+        reader.onload = e => {
+            var size = e.loaded / 1048576; // <-- MB
             newVid(e.target.result, size);
         };
-        reader.readAsDataURL(event.files[0]);
-        loadingVid();
+        reader.readAsDataURL(event.files[i]);
+        loadingVid()
     }
 }
 
