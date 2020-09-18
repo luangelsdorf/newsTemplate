@@ -64,6 +64,9 @@ function renderVid() {
                 })
             }
             document.getElementById('deleteVid_' + m.id).addEventListener('click', () => deleteVid(m.id))
+            document.getElementById('video_' + m.id).addEventListener('click', (e) => {
+                viewImg(e, document.getElementById('figura_vid_' + m.id), m.conteudo)
+            })
         });
     } else {
         $('#video-title').html('Vídeos')
@@ -75,6 +78,14 @@ function renderVid() {
 function totalVidSize() {
     let tamanhos = videos.map(a => a.tamanho);
     return tamanhos.reduce((a, b) => a + b, 0)
+}
+
+function viewImg(event, vid, src) {
+    if (event.target.localName !== 'button') {
+        document.querySelector('#viewImgTitle').innerHTML = `Visualizar Vídeo (${vid.videoWidth} x ${vid.videoHeight})`;
+        document.querySelector('#viewImgBody').innerHTML = `<figure class="figure m-0 text-center max-w-95"><video controls class="max-w-100 view-img" src="${src}"></video>`
+        $('#viewImg').modal()
+    }
 }
 
 function loadingVid() {
