@@ -828,3 +828,25 @@ table.table-dark tbody tr:last-child {
         font-size: 1.25rem !important;
     }
 }
+
+[data-slide="next"] {
+    background: linear-gradient(to right, transparent, gray);
+    opacity: 0.2;
+}
+
+[data-slide="prev"] {
+    background: linear-gradient(to left, transparent, gray);
+    opacity: 0.2;
+}
+
+[data-slide]:hover {
+    opacity: 0.3;
+}
+
+[data-slide]:focus {
+    opacity: 0.5;
+}
+
+.view-img {
+    max-height: 30rem;
+}

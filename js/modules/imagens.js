@@ -73,7 +73,7 @@ function renderImg() {
 function viewImg(event, img, src) {
     if (event.target.localName !== 'button') {
         document.querySelector('#viewImgTitle').innerHTML = `Visualizar Imagem (${img.naturalWidth} x ${img.naturalHeight})`;
-        document.querySelector('#viewImgBody').innerHTML = `<figure class="figure m-0 text-center max-w-95"><img class="max-w-100" src="${src}" alt="">`
+        document.querySelector('#viewImgBody').innerHTML = `<figure class="figure m-0 text-center max-w-95"><img class="max-w-100 view-img" src="${src}" alt="">`
         $('#viewImg').modal()
     }
 }
