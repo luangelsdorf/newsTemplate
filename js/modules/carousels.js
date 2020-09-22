@@ -24,7 +24,7 @@ function newImgViewCarousel(src, size) {
 function deleteCarouselImage(id) {
     viewCarousel.splice(viewCarousel.indexOf(viewCarousel.filter(value => value.id === id)[0]), 1);
     renderViewCarousel();
-    if (viewCarousel.length === 0 ) {
+    if (viewCarousel.length === 0) {
         $('#carousel_contente').append('<span class="text-dark h5 my-5">Nenhuma imagem adicionada</span>')
     }
 }
@@ -57,7 +57,8 @@ function renderViewCarousel() {
 }
 
 function newCarousel() {
-    if (viewCarousel.length !== 0) {
+    checkCarouselImages()
+    if (viewCarousel.length > 1) {
         let id = 0;
         if (carousels.length !== 0) while (carousels.filter(m => m.id === id)[0] !== undefined) id++;
         let size = singleCarouselSize(viewCarousel)
@@ -90,18 +91,18 @@ function renderReadyCarousel() {
             $('#carousels_container').append(container);
             $('#carrossel_' + m.id).append(m.conteudo.length + ' imagens, ' + m.tamanho.toFixed() + ' KB');
             carousels[carousels.indexOf(m)].conteudo.forEach(n => {
-                    var img = '<div class="col-md-2 p-3"><div class="alert img-carousel-container border-custom shadow-sm m-0 flex-center" id="readyCarousel_image_' + m.id + '_' + n.id + '"><img class="rounded img-carousel-preview max-w-100" id="readyCarousel_img_' + m.id + '_' + n.id + '" src="' + n.conteudo + '" alt=""></div></div>';
-                    $('#carouselWrapper_' + m.id).append(img)
+                var img = '<div class="col-md-2 p-3"><div class="alert img-carousel-container border-custom shadow-sm m-0 flex-center" id="readyCarousel_image_' + m.id + '_' + n.id + '"><img class="rounded img-carousel-preview max-w-100" id="readyCarousel_img_' + m.id + '_' + n.id + '" src="' + n.conteudo + '" alt=""></div></div>';
+                $('#carouselWrapper_' + m.id).append(img)
 
-                    document.getElementById('readyCarousel_image_' + m.id + '_' + n.id).addEventListener('click', (e) => {
-                        viewImg(e, document.getElementById('readyCarousel_img_' + m.id + '_' + n.id), n.conteudo)
-                    })
-                });
+                document.getElementById('readyCarousel_image_' + m.id + '_' + n.id).addEventListener('click', (e) => {
+                    viewImg(e, document.getElementById('readyCarousel_img_' + m.id + '_' + n.id), n.conteudo)
+                })
+            });
             document.getElementById('deleteCarousel_' + m.id).addEventListener('click', () => deleteCarousel(m.id))
             document.getElementById('previewCarousel_' + m.id).addEventListener('click', () => {
                 previewCarousel(m)
             })
-            });
+        });
         setTimeout(cleanViewCarousel, 1000);
     } else {
         $('#carousel-title').html('Carrosséis')
@@ -135,7 +136,6 @@ function viewImg(event, img, src) {
 }
 
 function previewCarousel(obj) {
-    console.log(obj)
     document.querySelector('.carousel-indicators').innerHTML = ''
     document.querySelector('.carousel-inner').innerHTML = ''
     carousels[carousels.indexOf(obj)].conteudo.forEach(m => {
@@ -153,4 +153,49 @@ function previewCarousel(obj) {
     $('#previewCarouselModal').modal()
 }
 
-export {onChangeCarouselFile, deleteAllCarousels, cleanViewCarousel, newCarousel}
+function checkCarouselImages() {
+    if (viewCarousel.length < 2) {
+        piscar('#carousel-modal-error', 'bg-caution')
+        document.getElementById('carousel-modal-error').innerHTML = '<span class="material-icons align-middle pb-1 pr-1">error</span><span>Adicione ao menos 2 imagens para poder fazer um carrossel!</span>'
+        document.getElementById('newCarousel').removeAttribute('data-dismiss')
+
+    } else {
+        document.getElementById('carousel-modal-error').innerHTML = ''
+        document.getElementById('newCarousel').setAttribute('data-dismiss', 'modal')
+    }
+}
+
+function checkImages() {
+    let imgCounter = 0
+    carousels.forEach(carousel => {
+        carousel.conteudo.forEach(() => {
+            imgCounter += 1
+        })
+    })
+
+    import('./imagens.js')
+        .then((img) => {
+            if (imgCounter + img.imagens.length < 2) {
+                piscar('#error', 'bg-caution')
+                document.getElementById('error').innerHTML = '<span class="material-icons align-middle pb-1 pr-1">error</span><span>Adicione ao menos 2 imagens para poder escolher a capa!</span>'
+
+            } else {
+                document.getElementById('error').innerHTML = ''
+
+            }
+        }
+    )
+}
+
+function piscar(container, cor) {
+    document.querySelector(container).classList.add(cor)
+    setTimeout(function () {
+        document.querySelector(container).classList.remove(cor)
+        document.querySelector(container).classList.add('flash');
+    }, 25);
+    setTimeout(function () {
+        document.querySelector(container).classList.remove('flash')
+    }, 400)
+}
+
+export {onChangeCarouselFile, deleteAllCarousels, cleanViewCarousel, newCarousel, checkImages}

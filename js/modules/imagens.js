@@ -83,4 +83,4 @@ function totalImgSize() {
     return tamanhos.reduce((a, b) => a + b, 0)
 }
 
-export {onChangeImg, deleteAllImgs}
+export {onChangeImg, deleteAllImgs, imagens}

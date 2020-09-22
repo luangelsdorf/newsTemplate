@@ -90,6 +90,11 @@
     </div>
 </div>
 
+<div class="container">
+    <button class="btn btn-success rounded-lg" id="add_capa_btn">Adicionar uma capa</button>
+    <strong class="d-inline-block text-caution m-2 p-2" id="error"></strong>
+</div>
+
 <!--MODAL CAROUSELS-->
 <div class="modal fade addCarousel" id="modalCarousel" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -114,11 +119,13 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <strong class="d-inline-block text-caution mr-auto rounded-lg" id="carousel-modal-error"></strong>
+
                 <button type="button" class="btn btn-outline-light border-0" id="cancelCarousel" data-dismiss="modal">
                     Cancelar
                 </button>
-                <button type="button" class="btn bg-success text-white" id="newCarousel" data-dismiss="modal">
-                    Salvar Mudanças
+                <button type="button" class="btn bg-success text-white" id="newCarousel">
+                    Salvar mudanças
                 </button>
             </div>
         </div>

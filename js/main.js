@@ -13,7 +13,7 @@ function getDarkCookie() {
     const name = "site_darkmode=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
+    for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) === ' ') c = c.substring(1);
         if (c.indexOf(name) === 0) return c.substring(name.length, c.length) === "true";
@@ -24,14 +24,14 @@ function getDarkCookie() {
 
 function setDarkCookie(state) {
     const tempo = new Date();
-    tempo.setDate(tempo.getTime() + (365*24*60*60*1000));
-    const expires = "expires="+ tempo.toUTCString();
-    document.cookie = "site_darkmode"+"="+state+";" +expires+"; path=/";
+    tempo.setDate(tempo.getTime() + (365 * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + tempo.toUTCString();
+    document.cookie = "site_darkmode" + "=" + state + ";" + expires + "; path=/";
 }
 
 
-function setTheme(arg){
-    if(!arg) {
+function setTheme(arg) {
+    if (!arg) {
         $('#darkMode').attr("checked", false);
         $('.navbar-dark').removeClass('navbar-dark').addClass('navbar-light');
         $('.bg-dark').removeClass('bg-dark').addClass('bg-light');
@@ -60,10 +60,6 @@ function setTheme(arg){
         $('.bg-pink-dark').removeClass('bg-pink-dark').addClass('bg-pink-light');
         $('.bg-teal-dark').removeClass('bg-teal-dark').addClass('bg-teal-light');
         $('.add-not-dark').removeClass('add-not-dark').addClass('add-not-light');
-
-
-
-
 
 
     } else {
@@ -98,7 +94,6 @@ function setTheme(arg){
         $('.add-not-light').removeClass('add-not-light').addClass('add-not-dark');
 
 
-
     }
 }
 
@@ -109,9 +104,9 @@ document.querySelector('#darkMode').addEventListener('click', () => {
 //--------------------------------------------------------------------------------------------------------------------\\
 var sideBarVisible = true;
 
-let carousels     = [];
+let carousels = [];
 
-let imagens       = [];
+let imagens = [];
 
 
 /* Paragraph Functions */
@@ -153,6 +148,10 @@ import('./modules/carousels.js')
         document.querySelector('#deleteAllCarousels').addEventListener('click', () => {
             carousels.deleteAllCarousels()
         })
+
+        document.querySelector('#add_capa_btn').addEventListener('click', () => {
+            carousels.checkImages()
+        })
     })
 
 /* Image Functions */
@@ -181,7 +180,6 @@ import('./modules/videos.js')
     })
 
 
-
 /* MISC */
 $(document).ready(() => {
     $('#form_cancel').submit(() => {
@@ -192,23 +190,23 @@ $(document).ready(() => {
 function hideList(element, btn, arrow) {
     $(element).hide(200);
     $(arrow).removeClass('up').addClass('down');
-    $(btn).removeAttr("onclick").attr("onclick", "showList(" + "'"  + element + "', " + "'" + btn + "', " + "'" + arrow + "'" + ")")
+    $(btn).removeAttr("onclick").attr("onclick", "showList(" + "'" + element + "', " + "'" + btn + "', " + "'" + arrow + "'" + ")")
 }
 
 function showList(element, btn, arrow) {
     $(element).show(200);
     $(arrow).removeClass('down').addClass('up');
-    $(btn).removeAttr("onclick").attr("onclick", "hideList(" + "'"  + element + "', " + "'" + btn + "', " + "'" + arrow + "'" + ")")
+    $(btn).removeAttr("onclick").attr("onclick", "hideList(" + "'" + element + "', " + "'" + btn + "', " + "'" + arrow + "'" + ")")
 }
 
 /* Flash Animation Green */
 
 function piscarVerde(container) {
     $(container).addClass('bg-success');
-    setTimeout(function() {
+    setTimeout(function () {
         $(container).removeClass('bg-success').addClass('flash');
     }, 25);
-    setTimeout(function() {
+    setTimeout(function () {
         $(container).removeClass('flash')
     }, 400)
 }
@@ -217,10 +215,10 @@ function piscarVerde(container) {
 
 function piscarVermelho(container) {
     $(container).addClass('bg-danger');
-    setTimeout(function() {
+    setTimeout(function () {
         $(container).removeClass('bg-danger').addClass('flash');
     }, 25);
-    setTimeout(function() {
+    setTimeout(function () {
         $(container).removeClass('flash')
     }, 400)
 }
